@@ -102,10 +102,10 @@ We track not just model performance but business impact. Every dashboard in the 
 ## Real-World Impact: The Numbers Don't Lie
 
 Since implementing this systematic approach:
-- **MetLife**: $5M+ in value, 30% increase in lead conversion
-- **Global Retailer**: 25% operational cost reduction across 15,000 stores
-- **Healthcare Network**: 40% improvement in patient outcome predictions
-- **Financial Services**: 92% fraud detection accuracy, $8M in prevented losses
+- **Leading Insurance Provider**: $5M+ in value, 30% increase in lead conversion
+- **Global Retail Chain**: 25% operational cost reduction across 15,000 stores
+- **Healthcare Technology Company**: 40% improvement in patient outcome predictions
+- **Financial Services Firm**: 92% fraud detection accuracy, $8M in prevented losses
 
 Total impact across all implementations: $45M+ in realized value.
 

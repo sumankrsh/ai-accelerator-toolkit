@@ -20,7 +20,7 @@ After leading AI initiatives across 350+ business units with $45M+ in realized R
 
 👉 Try the live demo: [Link to Toolkit]
 
-This isn't just another tool - it's battle-tested frameworks from real enterprise transformations at MetLife, Circle K, and beyond.
+This isn't just another tool - it's battle-tested frameworks from real enterprise transformations at Fortune 500 insurance, retail, and healthcare companies.
 
 What's your biggest challenge in scaling AI initiatives? Let's discuss!
 
@@ -63,7 +63,7 @@ The meeting that changed everything...
 
 "We've spent $3M on AI initiatives with nothing in production," the CTO said.
 
-That was 2 years ago at MetLife. Today, we've deployed 150+ models generating $5M+ in value.
+That was 2 years ago at a leading insurance provider. Today, we've deployed 150+ models generating $5M+ in value.
 
 The difference? We built a systematic approach to AI transformation.
 

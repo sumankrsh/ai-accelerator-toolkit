@@ -147,10 +147,10 @@ def create_product_overview_pdf():
     elements.append(Paragraph("Proven Results", heading_style))
     
     results = [
-        ["MetLife", "$5M+ impact, 30% increase in conversions"],
-        ["Global Retail", "25% operational cost reduction"],
-        ["Healthcare Network", "40% improvement in patient outcomes"],
-        ["Financial Services", "92% fraud detection, $8M saved"]
+        ["Leading Insurance Provider", "$5M+ impact, 30% increase in conversions"],
+        ["Global Retail Chain", "25% operational cost reduction"],
+        ["Healthcare Technology Company", "40% improvement in patient outcomes"],
+        ["Financial Services Firm", "92% fraud detection, $8M saved"]
     ]
     
     t2 = Table(results, colWidths=[2*inch, 4*inch])

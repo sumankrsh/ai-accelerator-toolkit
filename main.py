@@ -1,81 +1,245 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
 import plotly.express as px
 import plotly.graph_objects as go
 from datetime import datetime
-from leadership_case_study import show_leadership_page, get_case_study_content
+import os
+import io
+import base64
+from reportlab.lib.pagesizes import letter
+from reportlab.pdfgen import canvas
+from reportlab.lib import colors
 
+# Page configuration
 st.set_page_config(
-    page_title="Global AI-Accelerator Toolkit",
+    page_title="AI Accelerator Toolkit | Enterprise AI Platform",
     page_icon="🚀",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for better styling
+# Helper functions for PDF generation
+def generate_mlops_checklist_pdf():
+    """Generate MLOps Checklist PDF"""
+    buffer = io.BytesIO()
+    c = canvas.Canvas(buffer, pagesize=letter)
+    width, height = letter
+    
+    # Title
+    c.setFont("Helvetica-Bold", 24)
+    c.drawCentredString(width/2, height-50, "MLOps Implementation Checklist")
+    
+    # Content
+    y = height - 100
+    categories = [
+        ("Data Pipeline", [
+            "Data versioning system implemented",
+            "Automated data quality checks",
+            "Feature store established"
+        ]),
+        ("Model Development", [
+            "Experiment tracking system",
+            "Model registry configured",
+            "Automated hyperparameter tuning"
+        ]),
+        ("Deployment", [
+            "CI/CD pipeline established",
+            "A/B testing framework",
+            "Model drift detection"
+        ])
+    ]
+    
+    c.setFont("Helvetica-Bold", 14)
+    for category, items in categories:
+        c.drawString(50, y, category)
+        y -= 25
+        
+        c.setFont("Helvetica", 11)
+        for item in items:
+            c.drawString(70, y, f"□ {item}")
+            y -= 20
+        y -= 10
+    
+    c.save()
+    buffer.seek(0)
+    return buffer
+
+def generate_roi_template_pdf():
+    """Generate ROI Template PDF"""
+    buffer = io.BytesIO()
+    c = canvas.Canvas(buffer, pagesize=letter)
+    width, height = letter
+    
+    c.setFont("Helvetica-Bold", 24)
+    c.drawCentredString(width/2, height-50, "AI ROI Calculation Template")
+    
+    y = height - 100
+    sections = [
+        "1. Cost Savings",
+        "   - Labor cost reduction: $_______",
+        "   - Process automation savings: $_______",
+        "",
+        "2. Revenue Generation",
+        "   - New revenue streams: $_______",
+        "   - Customer retention value: $_______",
+        "",
+        "3. Implementation Costs",
+        "   - Initial development: $_______",
+        "   - Annual operations: $_______",
+        "",
+        "4. ROI Calculation",
+        "   - Total Benefits: $_______",
+        "   - Total Costs: $_______",
+        "   - ROI Percentage: _____%"
+    ]
+    
+    c.setFont("Helvetica", 12)
+    for line in sections:
+        c.drawString(50, y, line)
+        y -= 20
+    
+    c.save()
+    buffer.seek(0)
+    return buffer
+
+def generate_architecture_pdf(industry, cloud_provider, use_case):
+    """Generate Architecture Blueprint PDF"""
+    buffer = io.BytesIO()
+    c = canvas.Canvas(buffer, pagesize=letter)
+    width, height = letter
+    
+    c.setFont("Helvetica-Bold", 20)
+    c.drawCentredString(width/2, height-50, f"{industry} AI Architecture Blueprint")
+    
+    c.setFont("Helvetica", 14)
+    c.drawCentredString(width/2, height-75, f"{cloud_provider} | {use_case}")
+    
+    y = height - 120
+    c.setFont("Helvetica-Bold", 14)
+    c.drawString(50, y, "Architecture Components:")
+    
+    y -= 30
+    components = [
+        "1. Data Layer",
+        f"   - Storage: {cloud_provider} Data Lake",
+        "   - Processing: Distributed compute",
+        "",
+        "2. ML Platform",
+        "   - Training: GPU-enabled compute",
+        "   - Registry: Model versioning",
+        "",
+        "3. Serving Layer",
+        "   - API Gateway: REST endpoints",
+        "   - Monitoring: Real-time metrics",
+        "",
+        "4. Estimated Cost",
+        "   - Development: $5,000-$8,000/month",
+        "   - Production: $15,000-$25,000/month"
+    ]
+    
+    c.setFont("Helvetica", 11)
+    for line in components:
+        c.drawString(50, y, line)
+        y -= 18
+    
+    c.save()
+    buffer.seek(0)
+    return buffer
+
+# Load data
+@st.cache_data
+def load_data():
+    if os.path.exists('dummy_enterprise_data.csv'):
+        df = pd.read_csv('dummy_enterprise_data.csv')
+        df['Implementation_Date'] = pd.to_datetime(df['Implementation_Date'])
+        return df
+    else:
+        # Generate sample data if file doesn't exist
+        import random
+        data = []
+        regions = ['US-East', 'US-West', 'EMEA', 'APAC', 'LATAM']
+        industries = ['Insurance', 'Healthcare', 'Retail', 'Banking']
+        
+        for i in range(350):
+            data.append({
+                'Business_Unit': f'Unit_{i}',
+                'Region': random.choice(regions),
+                'Industry': random.choice(industries),
+                'Cloud_Ready': random.choice([True, False]),
+                'Data_Maturity_Score': random.randint(1, 10),
+                'ML_Ops_Maturity_Score': random.randint(1, 10),
+                'Data_Governance_Score': random.randint(1, 10),
+                'Overall_Readiness_Score': round(random.uniform(1, 10), 1),
+                'Estimated_AI_ROI_MillionUSD': round(random.uniform(1, 10), 2),
+                'Models_In_Production': random.randint(0, 50),
+                'Time_To_Market_Days': random.randint(30, 180),
+                'AI_Investment_Percentage': random.uniform(5, 25),
+                'Cloud_Provider': random.choice(['Azure', 'AWS', 'GCP'])
+            })
+        return pd.DataFrame(data)
+
+# Initialize session state
+if 'generated_blueprint' not in st.session_state:
+    st.session_state.generated_blueprint = False
+
+# Load data
+df = load_data()
+
+# Custom CSS
 st.markdown("""
 <style>
     .main-header {
         font-size: 3.5rem;
         font-weight: bold;
-        background: linear-gradient(90deg, #1E88E5 0%, #1565C0 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: #1E88E5;
         text-align: center;
         padding: 2rem 0;
     }
-    .metric-card {
+    .sub-header {
+        font-size: 1.3rem;
+        color: #666;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    div[data-testid="metric-container"] {
         background-color: #f0f2f6;
-        padding: 1.5rem;
+        border: 1px solid #ddd;
+        padding: 1rem;
         border-radius: 10px;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    .stTabs [data-baseweb="tab-list"] {
-        gap: 24px;
-    }
-    .stTabs [data-baseweb="tab"] {
-        height: 50px;
-        padding-left: 20px;
-        padding-right: 20px;
-        background-color: #f0f2f6;
-        border-radius: 10px;
-    }
-    .stTabs [aria-selected="true"] {
+    .stButton > button {
         background-color: #1E88E5;
         color: white;
+        font-weight: bold;
+    }
+    .success-box {
+        background-color: #d4edda;
+        border: 1px solid #c3e6cb;
+        color: #155724;
+        padding: 1rem;
+        border-radius: 5px;
+        margin: 1rem 0;
     }
 </style>
 """, unsafe_allow_html=True)
 
-# Load data
-@st.cache_data
-def load_data():
-    df = pd.read_csv('dummy_enterprise_data.csv')
-    df['Implementation_Date'] = pd.to_datetime(df['Implementation_Date'])
-    return df
-
-df = load_data()
-
-# Sidebar for filters and branding
+# Sidebar
 with st.sidebar:
-    st.image("https://via.placeholder.com/300x100/1E88E5/FFFFFF?text=AI+Accelerator", width=300)
-    st.markdown("### 🎯 Enterprise AI Transformation Suite")
-    st.markdown("**Version:** 2.0")
+    st.markdown("### 🚀 AI Accelerator Toolkit")
+    st.markdown("**Version:** 2.0 Enterprise")
     st.markdown("**Last Updated:** " + datetime.now().strftime("%B %Y"))
     
     st.markdown("---")
-    st.markdown("### 🏢 Leadership")
-    st.markdown("**Solution Architect:** Suman Mukherjee")
-    st.markdown("**Role:** Global AI Strategy Lead")
-    st.markdown("**Impact:** $45M+ ROI | 350+ Business Units")
-    st.markdown("**Contact:** smn.mukherjee@gmail.com")
     
-    if st.button("📄 View Leadership Impact", use_container_width=True):
-        show_leadership_page()
+    st.markdown("### 👤 Solution Architect")
+    st.markdown("**Suman Mukherjee**")
+    st.markdown("Global AI Strategy Lead")
+    st.markdown("📧 smn.mukherjee@gmail.com")
     
     st.markdown("---")
-    st.markdown("### 📊 Global Filters")
+    
+    st.markdown("### 🎛️ Global Filters")
     
     selected_regions = st.multiselect(
         "Select Regions",
@@ -89,85 +253,53 @@ with st.sidebar:
         default=df['Industry'].unique()[:3]
     )
     
-    maturity_threshold = st.slider(
-        "Minimum Maturity Score",
-        min_value=1,
-        max_value=10,
-        value=5
-    )
-    
     # Filter data
     filtered_df = df[
         (df['Region'].isin(selected_regions)) &
-        (df['Industry'].isin(selected_industries)) &
-        (df['Overall_Readiness_Score'] >= maturity_threshold)
+        (df['Industry'].isin(selected_industries))
     ]
     
     st.markdown("---")
-    st.markdown("### 📥 Downloads")
     
-    case_study = get_case_study_content()
-    leadership_content = f"""
-LEADERSHIP IMPACT SUMMARY
-========================
-
-Role: Global AI Strategy Lead & Solution Architect
-Impact: Led enterprise-wide AI transformation
-
-KEY ACHIEVEMENTS:
-• $45M+ in realized ROI (Year 1)
-• 350+ business units transformed
-• 150+ ML models in production
-• 40% improvement in time-to-market
-• 500+ employees trained
-
-TECHNICAL LEADERSHIP:
-• Designed multi-cloud AI platform
-• Implemented enterprise MLOps framework
-• Built real-time ML serving (10M+ predictions/day)
-• Created reusable AI accelerators
-
-BUSINESS TRANSFORMATION:
-• Customer Intelligence: $12M retained revenue
-• Risk & Compliance: $8M fraud prevented
-• Operations: 30% inventory cost reduction
-
-Technologies: {', '.join(case_study['technologies'][:6])}
-    """
-    
-    st.download_button(
-        label="📄 Leadership One-Pager",
-        data=leadership_content,
-        file_name="leadership_impact_summary.txt",
-        mime="text/plain"
-    )
+    st.markdown("### 📊 Quick Stats")
+    st.metric("Total Units", len(filtered_df))
+    st.metric("Avg Readiness", f"{filtered_df['Overall_Readiness_Score'].mean():.1f}/10")
+    st.metric("Total ROI", f"${filtered_df['Estimated_AI_ROI_MillionUSD'].sum():.1f}M")
 
 # Main content
-st.markdown('<h1 class="main-header">🚀 Global AI-Accelerator Toolkit</h1>', unsafe_allow_html=True)
+st.markdown('<h1 class="main-header">🚀 AI Accelerator Toolkit</h1>', unsafe_allow_html=True)
+st.markdown('<p class="sub-header">Enterprise AI Transformation Platform | $45M+ Proven Impact</p>', unsafe_allow_html=True)
 
-# KPI metrics at the top
-col1, col2, col3, col4 = st.columns(4)
+# Top KPI Metrics
+col1, col2, col3, col4, col5 = st.columns(5)
+
 with col1:
-    total_units = len(filtered_df)
-    st.metric("Business Units", total_units, f"+{int(total_units*0.15)} QoQ")
+    st.metric("Business Units", len(filtered_df), f"+{int(len(filtered_df)*0.15)}")
+
 with col2:
     avg_roi = filtered_df['Estimated_AI_ROI_MillionUSD'].mean()
     st.metric("Avg ROI", f"${avg_roi:.1f}M", "+23%")
+
 with col3:
-    ready_units = len(filtered_df[filtered_df['Cloud_Ready']])
-    st.metric("Cloud Ready", f"{ready_units/total_units*100:.0f}%", "+12%")
+    cloud_ready = len(filtered_df[filtered_df['Cloud_Ready']]) / len(filtered_df) * 100
+    st.metric("Cloud Ready", f"{cloud_ready:.0f}%", "+12%")
+
 with col4:
     total_models = filtered_df['Models_In_Production'].sum()
-    st.metric("Models in Production", total_models, "+45")
+    st.metric("Models in Prod", f"{total_models:,}", "+45")
+
+with col5:
+    avg_time = filtered_df['Time_To_Market_Days'].mean()
+    st.metric("Avg Time to Market", f"{avg_time:.0f}d", "-30d")
 
 st.markdown("---")
 
 # Main tabs
 tab1, tab2, tab3, tab4 = st.tabs([
-    "📊 Change Readiness Dashboard",
+    "📊 Change Readiness",
     "🏗️ Blueprint Generator",
     "💰 ROI Estimator",
-    "📚 MLOps Starter Kit"
+    "📚 MLOps Toolkit"
 ])
 
 with tab1:
@@ -176,74 +308,44 @@ with tab1:
     col1, col2 = st.columns(2)
     
     with col1:
-        # Readiness heatmap
-        st.subheader("🎯 Regional Readiness Heatmap")
+        st.subheader("🌍 Global Readiness Heatmap")
+        
         pivot_data = filtered_df.pivot_table(
             values='Overall_Readiness_Score',
             index='Industry',
             columns='Region',
             aggfunc='mean'
-        )
+        ).round(1)
         
         fig = px.imshow(
             pivot_data,
             labels=dict(x="Region", y="Industry", color="Readiness Score"),
-            color_continuous_scale="RdYlBu",
-            aspect="auto"
+            color_continuous_scale="RdBu",
+            title="AI Readiness by Industry and Region"
         )
-        fig.update_layout(height=400)
         st.plotly_chart(fig, use_container_width=True)
     
     with col2:
-        # Maturity distribution
         st.subheader("📈 Maturity Score Distribution")
+        
         fig = go.Figure()
         fig.add_trace(go.Box(y=filtered_df['Data_Maturity_Score'], name='Data Maturity'))
         fig.add_trace(go.Box(y=filtered_df['ML_Ops_Maturity_Score'], name='MLOps Maturity'))
-        fig.add_trace(go.Box(y=filtered_df['Data_Governance_Score'], name='Data Governance'))
-        fig.update_layout(height=400, showlegend=False)
+        fig.add_trace(go.Box(y=filtered_df['Data_Governance_Score'], name='Governance'))
+        
+        fig.update_layout(title="Maturity Score Components", showlegend=False)
         st.plotly_chart(fig, use_container_width=True)
     
-    # Detailed metrics
-    st.subheader("🔍 Detailed Readiness Metrics")
+    # Key insights
+    st.subheader("🔍 Key Insights")
     
-    col1, col2, col3 = st.columns(3)
-    
-    with col1:
-        # Cloud provider distribution
-        cloud_dist = filtered_df['Cloud_Provider'].value_counts()
-        fig = px.pie(
-            values=cloud_dist.values,
-            names=cloud_dist.index,
-            title="Cloud Provider Distribution",
-            hole=0.4
-        )
-        fig.update_layout(height=300)
-        st.plotly_chart(fig, use_container_width=True)
-    
-    with col2:
-        # Time to market analysis
-        fig = px.histogram(
-            filtered_df,
-            x='Time_To_Market_Days',
-            nbins=20,
-            title="Time to Market Distribution"
-        )
-        fig.update_layout(height=300)
-        st.plotly_chart(fig, use_container_width=True)
-    
-    with col3:
-        # AI investment vs budget
-        fig = px.scatter(
-            filtered_df,
-            x='Annual_IT_Budget_Million',
-            y='AI_Investment_Percentage',
-            size='Estimated_AI_ROI_MillionUSD',
-            color='Industry',
-            title="AI Investment Analysis"
-        )
-        fig.update_layout(height=300)
-        st.plotly_chart(fig, use_container_width=True)
+    avg_readiness = filtered_df['Overall_Readiness_Score'].mean()
+    if avg_readiness < 5:
+        st.warning("**Low Readiness**: Focus on foundational capabilities before advanced AI initiatives.")
+    elif avg_readiness < 7:
+        st.info("**Moderate Readiness**: Ready for targeted AI initiatives with proper planning.")
+    else:
+        st.success("**High Readiness**: Prepared for enterprise-wide AI transformation.")
 
 with tab2:
     st.header("AI Architecture Blueprint Generator")
@@ -251,11 +353,11 @@ with tab2:
     col1, col2 = st.columns([1, 2])
     
     with col1:
-        st.subheader("🔧 Configuration")
+        st.subheader("🛠️ Configuration")
         
         selected_industry = st.selectbox(
-            "Select Industry",
-            options=filtered_df['Industry'].unique()
+            "Industry",
+            options=['Insurance', 'Healthcare', 'Retail', 'Banking', 'Manufacturing']
         )
         
         selected_cloud = st.selectbox(
@@ -265,359 +367,187 @@ with tab2:
         
         selected_use_case = st.selectbox(
             "Primary Use Case",
-            options=filtered_df['Primary_AI_Use_Case'].unique()
-        )
-        
-        architecture_type = st.radio(
-            "Architecture Pattern",
-            options=['Batch Processing', 'Real-time Streaming', 'Hybrid']
+            options=['Customer Intelligence', 'Fraud Detection', 'Demand Forecasting', 
+                    'Predictive Maintenance', 'Document Processing']
         )
         
         include_mlops = st.checkbox("Include MLOps Pipeline", value=True)
         include_governance = st.checkbox("Include Data Governance", value=True)
         
-        generate_button = st.button("🚀 Generate Blueprint", type="primary")
+        if st.button("🚀 Generate Blueprint", type="primary", use_container_width=True):
+            st.session_state.generated_blueprint = True
     
     with col2:
         st.subheader("📐 Generated Architecture")
         
-        if generate_button:
-            # Dynamic architecture based on selections
-            if selected_cloud == "Azure":
-                st.markdown(f"### Azure Reference Architecture for {selected_industry}")
-                st.markdown(f"**Use Case:** {selected_use_case}")
-                st.markdown(f"**Pattern:** {architecture_type}")
-                
-                # Mermaid diagram
-                mermaid_code = """
-                graph TB
-                    subgraph "Data Sources"
-                        A[On-premise Systems]
-                        B[Cloud Applications]
-                        C[IoT Devices]
-                    end
-                    
-                    subgraph "Ingestion Layer"
-                        D[Azure Data Factory]
-                        E[Event Hubs]
-                    end
-                    
-                    subgraph "Storage Layer"
-                        F[Data Lake Gen2]
-                        G[Cosmos DB]
-                    end
-                    
-                    subgraph "Processing Layer"
-                        H[Databricks]
-                        I[Synapse Analytics]
-                    end
-                    
-                    subgraph "ML Platform"
-                        J[Azure ML]
-                        K[Model Registry]
-                    end
-                    
-                    subgraph "Serving Layer"
-                        L[API Management]
-                        M[Container Instances]
-                    end
-                    
-                    A --> D
-                    B --> D
-                    C --> E
-                    D --> F
-                    E --> F
-                    F --> H
-                    F --> I
-                    H --> J
-                    I --> J
-                    J --> K
-                    K --> L
-                    K --> M
-                """
-                
-                if include_mlops:
-                    mermaid_code += """
-                    
-                    subgraph "MLOps Pipeline"
-                        N[Azure DevOps]
-                        O[Model Monitoring]
-                    end
-                    
-                    J --> N
-                    M --> O
-                    O --> J
-                """
-                
-                if include_governance:
-                    mermaid_code += """
-                    
-                    subgraph "Governance"
-                        P[Purview]
-                        Q[Key Vault]
-                    end
-                    
-                    F --> P
-                    Q --> L
-                """
-                
-                st.code(mermaid_code, language='mermaid')
-                
-                # Technical specifications
-                st.markdown("### 📋 Technical Specifications")
-                
-                specs = {
-                    "Data Ingestion": "Azure Data Factory with 15-min batch intervals",
-                    "Storage": "ADLS Gen2 with hierarchical namespace",
-                    "Compute": "Databricks with auto-scaling (4-16 nodes)",
-                    "ML Framework": "MLflow on Azure ML",
-                    "Deployment": "AKS with GPU nodes for inference",
-                    "Monitoring": "Application Insights + Custom dashboards",
-                    "Security": "Private endpoints, managed identities",
-                    "Estimated Cost": "$15,000 - $25,000/month"
-                }
-                
-                for key, value in specs.items():
-                    st.markdown(f"**{key}:** {value}")
+        if st.session_state.generated_blueprint:
+            st.markdown(f"### {selected_cloud} Reference Architecture for {selected_industry}")
+            st.markdown(f"**Use Case:** {selected_use_case}")
+            
+            # Architecture visualization
+            st.markdown("#### Architecture Layers:")
+            
+            components = {
+                "Data Sources": ["Operational Systems", "External APIs", "IoT Devices", "Third-party Data"],
+                "Ingestion": ["Event Streaming", "Batch ETL", "Change Data Capture", "API Gateway"],
+                "Storage": ["Data Lake", "Data Warehouse", "Feature Store", "Object Storage"],
+                "Processing": ["Stream Processing", "Batch Processing", "ML Pipeline", "Data Quality"],
+                "ML Platform": ["Model Training", "Model Registry", "Experiment Tracking", "Model Serving"],
+                "Serving": ["REST APIs", "GraphQL", "gRPC", "Edge Deployment"]
+            }
+            
+            for layer, items in components.items():
+                st.markdown(f"**{layer}:** {', '.join(items)}")
+            
+            # Cost estimate
+            st.markdown("#### 💰 Cost Estimate")
+            st.info(f"""
+            - **Development Environment:** $5,000 - $8,000/month
+            - **Production Environment:** $15,000 - $25,000/month
+            - **Total Annual Estimate:** $240,000 - $396,000
+            """)
+            
+            # Generate PDF
+            blueprint_pdf = generate_architecture_pdf(selected_industry, selected_cloud, selected_use_case)
+            
+            st.download_button(
+                label="📥 Download Architecture Blueprint (PDF)",
+                data=blueprint_pdf,
+                file_name=f"{selected_industry}_{selected_cloud}_Architecture.pdf",
+                mime="application/pdf",
+                type="primary"
+            )
+            
+            st.success("✅ Blueprint generated successfully!")
         else:
-            st.info("👆 Configure your requirements and click 'Generate Blueprint' to create a custom architecture")
+            st.info("👈 Configure your requirements and click 'Generate Blueprint'")
 
 with tab3:
     st.header("ROI Estimation & Business Case Builder")
     
-    # ROI Overview
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        st.subheader("💰 ROI by Region")
-        roi_by_region = filtered_df.groupby('Region').agg({
-            'Estimated_AI_ROI_MillionUSD': 'sum',
-            'Annual_IT_Budget_Million': 'sum'
-        }).reset_index()
-        roi_by_region['ROI_Percentage'] = (
-            roi_by_region['Estimated_AI_ROI_MillionUSD'] / 
-            roi_by_region['Annual_IT_Budget_Million'] * 100
-        )
-        
-        fig = px.bar(
-            roi_by_region,
-            x='Region',
-            y='Estimated_AI_ROI_MillionUSD',
-            text='Estimated_AI_ROI_MillionUSD',
-            title='Total AI ROI by Region (Million USD)'
-        )
-        fig.update_traces(texttemplate='$%{text:.1f}M', textposition='outside')
-        fig.update_layout(height=400)
-        st.plotly_chart(fig, use_container_width=True)
-    
-    with col2:
-        st.subheader("📈 ROI by Industry")
-        roi_by_industry = filtered_df.groupby('Industry')['Estimated_AI_ROI_MillionUSD'].mean().reset_index()
-        roi_by_industry = roi_by_industry.sort_values('Estimated_AI_ROI_MillionUSD', ascending=True)
-        
-        fig = px.bar(
-            roi_by_industry,
-            x='Estimated_AI_ROI_MillionUSD',
-            y='Industry',
-            orientation='h',
-            text='Estimated_AI_ROI_MillionUSD',
-            title='Average AI ROI by Industry (Million USD)'
-        )
-        fig.update_traces(texttemplate='$%{text:.1f}M', textposition='outside')
-        fig.update_layout(height=400)
-        st.plotly_chart(fig, use_container_width=True)
-    
     # ROI Calculator
-    st.markdown("---")
     st.subheader("🧮 Custom ROI Calculator")
     
     col1, col2, col3 = st.columns(3)
     
     with col1:
-        st.markdown("**Input Parameters**")
-        team_size = st.number_input("Team Size", min_value=5, max_value=500, value=50)
-        current_productivity = st.slider("Current Productivity (%)", 0, 100, 60)
-        ai_productivity_gain = st.slider("Expected AI Productivity Gain (%)", 0, 50, 25)
-        avg_salary = st.number_input("Average Annual Salary ($)", min_value=50000, max_value=300000, value=120000)
+        st.markdown("#### 📊 Business Metrics")
+        annual_revenue = st.number_input("Annual Revenue ($M)", min_value=10.0, value=500.0)
+        num_employees = st.number_input("Number of Employees", min_value=100, value=5000)
+        current_efficiency = st.slider("Current Efficiency (%)", 30, 90, 60)
     
     with col2:
-        st.markdown("**Cost Parameters**")
-        implementation_cost = st.number_input("Implementation Cost ($)", min_value=50000, max_value=5000000, value=500000)
-        annual_operating_cost = st.number_input("Annual Operating Cost ($)", min_value=10000, max_value=1000000, value=150000)
-        implementation_months = st.slider("Implementation Timeline (months)", 3, 24, 9)
+        st.markdown("#### 🎯 AI Impact")
+        efficiency_gain = st.slider("Expected Efficiency Gain (%)", 5, 50, 25)
+        revenue_uplift = st.slider("Revenue Uplift (%)", 0, 30, 10)
+        cost_reduction = st.slider("Cost Reduction (%)", 5, 40, 20)
     
     with col3:
-        st.markdown("**Calculated ROI**")
-        
-        # Calculate ROI
-        productivity_value = (team_size * avg_salary * (ai_productivity_gain / 100))
-        annual_benefit = productivity_value - annual_operating_cost
-        total_3year_benefit = (annual_benefit * 3) - implementation_cost
-        roi_percentage = (total_3year_benefit / implementation_cost) * 100
-        payback_months = implementation_cost / (annual_benefit / 12) if annual_benefit > 0 else 0
-        
-        st.metric("Annual Benefit", f"${annual_benefit:,.0f}")
-        st.metric("3-Year Net Benefit", f"${total_3year_benefit:,.0f}")
-        st.metric("ROI Percentage", f"{roi_percentage:.1f}%")
-        st.metric("Payback Period", f"{payback_months:.1f} months")
+        st.markdown("#### 💰 Investment")
+        implementation_cost = st.number_input("Implementation Cost ($K)", min_value=100, value=1000)
+        annual_operating_cost = st.number_input("Annual Operating Cost ($K)", min_value=50, value=300)
+        implementation_time = st.slider("Implementation Time (months)", 3, 24, 9)
     
-    # Business case summary
+    if st.button("💵 Calculate ROI", type="primary", use_container_width=True):
+        # ROI Calculations
+        revenue_benefit = annual_revenue * (revenue_uplift / 100) * 1000000
+        cost_savings = (annual_revenue * 0.7) * (cost_reduction / 100) * 1000000
+        total_annual_benefit = revenue_benefit + cost_savings
+        
+        total_3year_benefit = total_annual_benefit * 2.3  # Accounting for ramp-up
+        total_3year_cost = (implementation_cost * 1000) + (annual_operating_cost * 1000 * 3)
+        net_benefit = total_3year_benefit - total_3year_cost
+        roi_percentage = (net_benefit / total_3year_cost) * 100
+        
+        # Display results
+        st.markdown("---")
+        st.markdown("### 📊 ROI Analysis Results")
+        
+        col1, col2, col3, col4 = st.columns(4)
+        
+        with col1:
+            st.metric("3-Year Net Benefit", f"${net_benefit/1000000:.1f}M")
+        with col2:
+            st.metric("Annual Benefit", f"${total_annual_benefit/1000000:.1f}M")
+        with col3:
+            st.metric("ROI Percentage", f"{roi_percentage:.0f}%")
+        with col4:
+            st.metric("Payback Period", f"{int(total_3year_cost/total_annual_benefit*12)} months")
+        
+        st.success(f"✅ {'Proceed with implementation' if roi_percentage > 100 else 'Review parameters'}")
+    
+    # Download ROI template
     st.markdown("---")
-    st.subheader("📋 Executive Summary")
-    
-    st.info(f"""
-    **Business Case for AI Implementation**
-    
-    Based on the analysis of {len(filtered_df)} business units across {len(selected_regions)} regions:
-    
-    • **Total Potential ROI:** ${filtered_df['Estimated_AI_ROI_MillionUSD'].sum():.1f}M
-    • **Average Time to Market:** {filtered_df['Time_To_Market_Days'].mean():.0f} days
-    • **Cloud-Ready Units:** {len(filtered_df[filtered_df['Cloud_Ready']]) / len(filtered_df) * 100:.0f}%
-    • **High-Maturity Units (>7):** {len(filtered_df[filtered_df['Overall_Readiness_Score'] > 7]) / len(filtered_df) * 100:.0f}%
-    
-    **Recommended Next Steps:**
-    1. Prioritize high-maturity units for immediate AI implementation
-    2. Establish Center of Excellence for knowledge sharing
-    3. Standardize on {filtered_df['Cloud_Provider'].mode()[0]} as primary cloud platform
-    4. Focus on {filtered_df['Primary_AI_Use_Case'].mode()[0]} as initial use case
-    """)
+    roi_template = generate_roi_template_pdf()
+    st.download_button(
+        label="📥 Download ROI Template (PDF)",
+        data=roi_template,
+        file_name="AI_ROI_Template.pdf",
+        mime="application/pdf"
+    )
 
 with tab4:
     st.header("MLOps Starter Kit & Resources")
     
-    col1, col2 = st.columns(2)
+    col1, col2, col3 = st.columns(3)
     
     with col1:
-        st.subheader("🚀 Quick Start Templates")
-        
-        st.markdown("### 1. Project Structure Template")
+        st.markdown("### 🚀 Quick Start")
         st.code("""
-        ai-project/
-        ├── data/
-        │   ├── raw/
-        │   ├── processed/
-        │   └── external/
-        ├── models/
-        │   ├── experiments/
-        │   └── production/
-        ├── notebooks/
-        │   ├── exploratory/
-        │   └── reports/
-        ├── src/
-        │   ├── data/
-        │   ├── features/
-        │   ├── models/
-        │   └── visualization/
-        ├── tests/
-        ├── configs/
-        ├── requirements.txt
-        └── README.md
+ai-project/
+├── data/
+├── models/
+├── src/
+├── tests/
+├── configs/
+└── docs/
         """, language='text')
-        
-        st.markdown("### 2. MLOps Pipeline Template")
-        st.code("""
-        # Azure DevOps Pipeline
-        trigger:
-          branches:
-            include:
-            - main
-            - develop
-        
-        stages:
-        - stage: Build
-          jobs:
-          - job: TestAndBuild
-            steps:
-            - task: Python@3
-              inputs:
-                command: 'test'
-            - task: Docker@2
-              inputs:
-                command: 'build'
-        
-        - stage: Deploy
-          jobs:
-          - deployment: DeployModel
-            environment: 'production'
-            strategy:
-              runOnce:
-                deploy:
-                  steps:
-                  - task: AzureML@1
-                    inputs:
-                      modelName: '$(Build.DefinitionName)'
-                      modelVersion: '$(Build.BuildId)'
-        """, language='yaml')
     
     with col2:
-        st.subheader("📚 Best Practices & Guidelines")
-        
-        with st.expander("✅ Data Engineering Best Practices"):
-            st.markdown("""
-            - **Data Versioning:** Use DVC or Delta Lake for data versioning
-            - **Data Quality:** Implement Great Expectations for data validation
-            - **Feature Store:** Centralize feature engineering with Feast or Databricks Feature Store
-            - **Data Lineage:** Track data flow with Apache Atlas or Azure Purview
-            """)
-        
-        with st.expander("🤖 Model Development Guidelines"):
-            st.markdown("""
-            - **Experiment Tracking:** Use MLflow or Weights & Biases
-            - **Model Registry:** Centralize model artifacts and metadata
-            - **A/B Testing:** Implement gradual rollout with feature flags
-            - **Model Monitoring:** Track drift with Evidently AI or Azure ML
-            """)
-        
-        with st.expander("🔧 Infrastructure Recommendations"):
-            st.markdown("""
-            - **Compute:** Use spot instances for training, reserved for inference
-            - **Storage:** Implement tiered storage (hot/cold) for cost optimization
-            - **Networking:** Use private endpoints for security
-            - **Monitoring:** Implement comprehensive logging and alerting
-            """)
-        
-        with st.expander("📊 Governance Framework"):
-            st.markdown("""
-            - **Model Cards:** Document model purpose, limitations, and biases
-            - **Approval Process:** Implement multi-stage approval for production
-            - **Audit Trail:** Maintain complete history of model changes
-            - **Compliance:** Ensure GDPR/CCPA compliance in data handling
-            """)
+        st.markdown("### 📋 Best Practices")
+        st.markdown("""
+        - ✅ Version Control
+        - ✅ Automated Testing
+        - ✅ Model Registry
+        - ✅ Monitoring
+        - ✅ Documentation
+        """)
     
+    with col3:
+        st.markdown("### 🛠️ Tech Stack")
+        st.markdown("""
+        - **Orchestration:** Airflow
+        - **Tracking:** MLflow
+        - **Registry:** MLflow
+        - **Monitoring:** Evidently
+        - **Feature Store:** Feast
+        """)
+    
+    # Downloadable resources
     st.markdown("---")
-    st.subheader("📥 Downloadable Resources")
+    st.markdown("### 📥 Downloadable Resources")
     
     col1, col2, col3 = st.columns(3)
     
     with col1:
+        mlops_checklist = generate_mlops_checklist_pdf()
         st.download_button(
-            label="📄 MLOps Checklist",
-            data="MLOps Implementation Checklist",
-            file_name="mlops_checklist.pdf",
+            label="📋 MLOps Checklist (PDF)",
+            data=mlops_checklist,
+            file_name="MLOps_Checklist.pdf",
             mime="application/pdf"
         )
     
     with col2:
-        st.download_button(
-            label="📊 ROI Template",
-            data="AI ROI Calculation Template",
-            file_name="roi_template.xlsx",
-            mime="application/vnd.ms-excel"
-        )
+        st.button("🏗️ Architecture Templates", disabled=True, help="Coming soon")
     
     with col3:
-        st.download_button(
-            label="🏗️ Architecture Templates",
-            data="Cloud Architecture Templates",
-            file_name="architecture_templates.zip",
-            mime="application/zip"
-        )
+        st.button("📚 Best Practices Guide", disabled=True, help="Coming soon")
 
 # Footer
 st.markdown("---")
 st.markdown("""
-<div style='text-align: center; color: #666;'>
-    <p>Global AI-Accelerator Toolkit v2.0 | Built with Streamlit | © 2024</p>
-    <p>🚀 Accelerating Enterprise AI Transformation</p>
+<div style='text-align: center; color: #666; padding: 2rem 0;'>
+    <p>🚀 AI Accelerator Toolkit v2.0 | Built by Suman Mukherjee | © 2024</p>
 </div>
 """, unsafe_allow_html=True)

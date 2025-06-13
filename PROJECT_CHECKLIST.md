@@ -16,7 +16,7 @@
 
 ## 💡 Business-First Approach
 ✅ **ROI Module**: Custom calculator with 3-year projections
-✅ **MetLife-style Impact**: $5M+ savings demonstrated
+✅ **Insurance Sector Impact**: $5M+ savings demonstrated
 ✅ **Executive Summaries**: Auto-generated business cases
 ✅ **Industry Focus**: Insurance, Healthcare, Retail, Banking
 

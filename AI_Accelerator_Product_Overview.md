@@ -100,7 +100,7 @@ The Global AI-Accelerator Toolkit is an enterprise-ready platform designed to ra
 
 ## 🏆 Proven Results
 
-### MetLife Case Study
+### Leading Insurance Provider Case Study
 - **Challenge**: Fragmented AI initiatives, low adoption
 - **Solution**: Deployed toolkit across 15 teams
 - **Result**: $5M+ impact, 30% increase in conversions
@@ -219,7 +219,7 @@ The Global AI-Accelerator Toolkit is an enterprise-ready platform designed to ra
 - Led $45M+ enterprise AI transformations
 - 350+ business units transformed globally
 - Expert in Azure, MLOps, Enterprise Architecture
-- Proven track record at MetLife, Circle K, Stryker
+- Proven track record at Fortune 500 Insurance, Retail, and Healthcare companies
 
 ---
 
