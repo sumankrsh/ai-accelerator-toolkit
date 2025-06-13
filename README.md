@@ -2,6 +2,14 @@
 
 An enterprise-grade AI transformation platform that provides comprehensive tools for assessing AI readiness, generating cloud architectures, and calculating ROI across global business units.
 
+## 🆕 Latest Update: GenAI Edition
+Now includes an advanced GenAI Edition with:
+- 🎮 Interactive AI Playground with multi-model support
+- 📄 Document Q&A system
+- 📊 Real-time analytics and token tracking
+- 🤖 GenAI Ops toolkit
+- 💰 Enhanced ROI calculator for LLM implementations
+
 ![AI Accelerator](https://via.placeholder.com/800x200/1E88E5/FFFFFF?text=Global+AI+Accelerator+Toolkit)
 
 ## 🎯 Overview
@@ -60,7 +68,13 @@ This toolkit demonstrates leadership in enterprise AI transformation, showcasing
 
 4. **Run the application**
    ```bash
-   streamlit run main.py
+   streamlit run app.py
+   ```
+   
+   Or run specific editions directly:
+   ```bash
+   streamlit run pages/1_Enterprise_Edition.py  # For Enterprise Edition
+   streamlit run pages/2_GenAI_Edition.py       # For GenAI Edition
    ```
 
 5. **Access the app**
@@ -80,7 +94,7 @@ This toolkit demonstrates leadership in enterprise AI transformation, showcasing
    - Sign in with GitHub
    - Click "New app"
    - Select your repository
-   - Set main file path: `main.py`
+   - Set main file path: `app.py`
    - Click "Deploy"
 
 3. **Access your deployed app**
@@ -91,7 +105,12 @@ This toolkit demonstrates leadership in enterprise AI transformation, showcasing
 
 ```
 ai-accelerator-toolkit/
-├── main.py                    # Main Streamlit application
+├── app.py                     # Main app selector
+├── pages/
+│   ├── 1_Enterprise_Edition.py # Enterprise Edition
+│   └── 2_GenAI_Edition.py      # GenAI Edition
+├── main.py                    # Original enterprise app
+├── main_genai.py              # New GenAI features
 ├── generate_dummy_data.py     # Data generation script
 ├── leadership_case_study.py   # Leadership impact content
 ├── dummy_enterprise_data.csv  # Generated enterprise data
