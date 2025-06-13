@@ -1,0 +1,351 @@
+Business_Unit,Region,Industry,Cloud_Provider,Cloud_Ready,Data_Maturity_Score,ML_Ops_Maturity_Score,Data_Volume_TB,Models_In_Production,Time_To_Market_Days,Primary_AI_Use_Case,Annual_IT_Budget_Million,AI_Investment_Percentage,Estimated_AI_ROI_MillionUSD,Implementation_Date,Technical_Debt_Score,Data_Governance_Score,Team_Size,AI_Skilled_Resources,Overall_Readiness_Score,ROI_Potential
+"Winters, Meyers and Aguilar",US-East,Technology,AWS,True,5,7,28.0,6,51,Fraud Detection,71.8,14.8,8.52,2023-10-27,7,7,121,56,6.333333333333333,11.866295264623956
+Giles Group,EMEA,Healthcare,GCP,True,9,6,353.4,16,60,Quality Control,42.9,15.7,12.19,2023-07-12,8,9,140,20,8.0,28.414918414918418
+"Smith, Nguyen and Reeves",US-East,Retail,Multi-Cloud,False,6,7,189.3,10,51,Quality Control,13.1,16.6,6.73,2025-05-16,2,5,82,46,6.0,51.37404580152673
+Allen-Phillips,EMEA,Banking,AWS,True,6,1,485.6,2,360,Risk Assessment,78.7,9.7,4.46,2025-01-30,2,2,8,1,3.0,5.667090216010165
+Collins-Smith,MEA,Technology,Multi-Cloud,True,4,6,328.9,9,60,Predictive Maintenance,40.4,12.4,6.02,2024-10-01,5,3,70,88,4.333333333333333,14.900990099009901
+Melton Ltd,US-West,Telecommunications,GCP,False,2,7,210.2,5,51,Demand Forecasting,95.6,10.2,3.95,2023-08-01,2,6,7,21,5.0,4.131799163179917
+Dorsey-Villa,US-West,Energy,Azure,True,8,10,376.7,7,36,Demand Forecasting,50.2,21.1,13.35,2025-05-11,2,9,11,11,9.0,26.593625498007967
+Richards-Underwood,US-East,Banking,AWS,True,1,9,483.3,26,40,Risk Assessment,72.7,21.7,8.73,2024-03-12,5,10,43,52,6.666666666666667,12.008253094910591
+"Kirby, Marshall and Lang",US-West,Telecommunications,Multi-Cloud,False,8,2,119.9,5,180,Risk Assessment,43.1,13.7,4.41,2023-07-22,10,3,137,12,4.333333333333333,10.232018561484919
+"Mcdonald, Williams and Bird",APAC,Insurance,Multi-Cloud,True,1,8,350.6,13,45,Quality Control,76.9,19.8,7.53,2025-02-18,10,10,10,55,6.333333333333333,9.791937581274382
+"Gutierrez, Rivera and Obrien",EMEA,Telecommunications,Azure,True,1,1,455.2,1,360,Quality Control,41.0,21.3,1.41,2024-06-07,3,6,37,5,2.6666666666666665,3.439024390243902
+"Smith, Bowman and Cummings",EMEA,Healthcare,AWS,True,7,1,448.7,2,360,Demand Forecasting,93.4,7.4,4.81,2024-08-01,1,2,58,6,3.3333333333333335,5.149892933618843
+Kaiser Ltd,LATAM,Banking,Multi-Cloud,False,1,7,29.0,7,51,Fraud Detection,69.6,17.3,3.98,2023-07-09,1,7,52,81,5.0,5.718390804597702
+Brown Group,APAC,Energy,Multi-Cloud,True,7,5,253.0,13,72,Risk Assessment,32.6,24.7,10.4,2023-08-22,4,3,115,56,5.0,31.901840490797547
+"Williams, Daniels and Rice",MEA,Telecommunications,AWS,True,3,4,221.2,3,90,Document Processing,87.0,11.8,6.12,2025-02-08,8,5,85,27,4.0,7.03448275862069
+Martinez and Sons,APAC,Insurance,GCP,True,1,10,150.9,16,36,Fraud Detection,23.9,9.7,6.71,2025-02-23,10,8,142,117,6.333333333333333,28.075313807531384
+Brooks-Walker,LATAM,Energy,GCP,True,3,1,162.8,1,360,Quality Control,8.9,9.2,2.92,2023-10-27,1,5,5,1,3.0,32.80898876404494
+"Williams, Cannon and Jones",US-West,Energy,GCP,True,3,4,185.6,2,90,Demand Forecasting,10.4,24.7,5.35,2024-07-25,8,5,80,19,4.0,51.442307692307686
+Williams-Smith,MEA,Healthcare,Azure,False,4,8,352.7,7,45,Predictive Maintenance,77.0,6.2,5.9,2024-05-24,2,1,96,92,4.333333333333333,7.662337662337662
+Lozano-Perez,LATAM,Insurance,GCP,False,1,6,156.8,12,60,Demand Forecasting,94.1,6.4,3.27,2024-04-03,5,8,41,78,5.0,3.4750265674814025
+"Shelton, Mercer and Duncan",APAC,Telecommunications,Multi-Cloud,True,8,6,192.1,9,60,Document Processing,94.6,24.1,11.52,2024-02-03,7,4,148,41,6.0,12.177589852008456
+Brennan-Chan,US-West,Telecommunications,AWS,True,10,10,265.9,20,36,Customer Churn Prediction,5.4,20.2,14.75,2023-10-06,5,5,104,47,8.333333333333334,273.14814814814815
+"Acosta, Hampton and Daniel",EMEA,Manufacturing,AWS,True,6,9,86.6,26,40,Document Processing,74.6,10.3,12.73,2023-12-17,5,2,82,20,5.666666666666667,17.064343163538876
+"Parker, Curtis and Espinoza",Canada,Energy,Multi-Cloud,True,2,6,88.7,12,60,Quality Control,74.9,6.7,6.76,2024-02-20,10,8,144,10,5.333333333333333,9.025367156208276
+Chen LLC,MEA,Manufacturing,GCP,True,9,5,469.3,2,72,Predictive Maintenance,83.2,6.7,11.71,2025-04-24,10,5,136,31,6.333333333333333,14.07451923076923
+Smith Inc,US-East,Energy,Multi-Cloud,True,9,8,304.4,13,45,Customer Churn Prediction,48.9,19.5,10.42,2025-05-14,9,4,49,99,7.0,21.30879345603272
+"Brown, Nguyen and Moreno",EMEA,Healthcare,Multi-Cloud,True,10,6,115.1,11,60,Predictive Maintenance,65.3,8.6,12.1,2024-08-15,10,3,73,22,6.333333333333333,18.529862174578867
+Anderson Group,MEA,Technology,Azure,True,4,5,304.1,6,72,Risk Assessment,27.3,21.9,7.64,2023-08-15,2,3,78,35,4.0,27.985347985347985
+Lloyd-Frank,APAC,Technology,Multi-Cloud,False,3,10,475.2,16,36,Personalization,97.8,7.1,7.03,2024-06-26,7,2,21,50,5.0,7.188139059304705
+"Jennings, Diaz and Hall",LATAM,Healthcare,Multi-Cloud,True,5,7,384.7,12,51,Demand Forecasting,65.8,20.5,10.6,2023-11-02,3,5,103,46,5.666666666666667,16.109422492401215
+Sims-Long,US-West,Healthcare,GCP,True,2,8,320.3,5,45,Risk Assessment,96.4,21.7,6.36,2024-06-01,10,7,88,7,5.666666666666667,6.597510373443984
+Roth-Carrillo,APAC,Banking,Multi-Cloud,True,6,8,105.1,22,45,Demand Forecasting,7.1,6.8,12.54,2024-03-17,4,10,70,19,8.0,176.61971830985914
+Lucas and Sons,US-West,Healthcare,Multi-Cloud,True,3,5,246.0,9,72,Demand Forecasting,15.0,20.4,6.16,2023-09-03,8,9,91,65,5.666666666666667,41.06666666666667
+Lucas-Jimenez,MEA,Energy,Azure,False,5,1,375.4,0,360,Risk Assessment,58.8,17.6,2.57,2024-07-20,8,1,140,12,2.3333333333333335,4.370748299319728
+Gay-Bartlett,MEA,Technology,GCP,True,1,9,145.0,25,40,Personalization,92.6,20.2,8.4,2024-11-28,2,10,35,84,6.666666666666667,9.071274298056156
+"Hamilton, Scott and Meadows",US-East,Technology,GCP,True,5,10,417.3,28,36,Document Processing,85.7,24.0,10.88,2023-10-23,4,2,102,10,5.666666666666667,12.695449241540258
+Ruiz-Howard,US-East,Retail,GCP,True,5,6,311.1,11,60,Personalization,83.9,12.4,8.37,2024-03-05,9,9,41,77,6.666666666666667,9.976162097735397
+"King, Meyer and Blair",MEA,Insurance,Multi-Cloud,True,6,1,425.3,1,360,Document Processing,70.7,7.9,5.66,2023-12-26,5,5,124,6,4.0,8.005657708628005
+"Scott, Caldwell and Oliver",APAC,Telecommunications,Azure,False,5,10,375.0,19,36,Predictive Maintenance,95.2,6.5,6.6,2024-02-17,3,6,59,109,7.0,6.932773109243697
+Mitchell-Shah,Canada,Technology,GCP,True,9,2,229.7,5,180,Fraud Detection,93.6,24.7,9.77,2025-02-11,4,3,98,7,4.666666666666667,10.43803418803419
+"Erickson, Hardy and Cantrell",US-East,Technology,GCP,True,7,2,20.7,5,180,Risk Assessment,8.4,19.4,6.46,2025-04-27,2,10,31,1,6.333333333333333,76.9047619047619
+Harris Group,Canada,Retail,GCP,True,1,3,242.4,6,120,Quality Control,53.5,20.6,3.25,2023-08-04,7,5,20,21,3.0,6.074766355140187
+"Lewis, Stevens and Payne",Canada,Insurance,Azure,False,9,3,228.7,6,120,Predictive Maintenance,40.2,14.6,4.94,2024-09-21,3,6,35,14,6.0,12.288557213930348
+Ritter-Martin,US-East,Technology,GCP,True,3,2,9.1,5,180,Customer Churn Prediction,82.9,11.1,3.56,2025-01-24,4,5,91,15,3.3333333333333335,4.294330518697225
+Irwin PLC,US-West,Energy,AWS,False,7,5,249.1,11,72,Predictive Maintenance,52.6,10.0,6.1,2024-02-21,3,10,29,69,7.333333333333333,11.596958174904943
+"Miller, Ray and Rodriguez",US-East,Retail,Multi-Cloud,False,1,8,16.0,18,45,Quality Control,51.6,20.8,4.29,2023-06-20,1,6,83,114,5.0,8.313953488372093
+Bryant-Nguyen,APAC,Insurance,AWS,False,5,9,435.3,18,40,Fraud Detection,41.0,16.0,7.18,2024-11-03,5,8,110,62,7.333333333333333,17.51219512195122
+"Parsons, Cortez and Beard",US-East,Insurance,GCP,False,1,8,131.8,16,45,Fraud Detection,48.8,24.2,3.88,2024-01-08,7,6,66,41,5.0,7.950819672131147
+"Hicks, Dixon and Wood",APAC,Insurance,GCP,True,7,9,118.9,11,40,Risk Assessment,30.8,10.3,11.57,2024-03-24,9,3,46,117,6.333333333333333,37.56493506493507
+Lane-Marshall,US-West,Insurance,AWS,False,4,1,167.3,2,360,Predictive Maintenance,5.7,9.9,2.95,2024-09-26,10,6,96,3,3.6666666666666665,51.75438596491229
+Haynes-Gonzalez,APAC,Retail,Multi-Cloud,True,5,4,213.2,4,90,Document Processing,6.2,23.1,7.64,2023-08-17,3,4,9,51,4.333333333333333,123.2258064516129
+King-Lewis,Canada,Insurance,GCP,True,8,3,216.9,2,120,Predictive Maintenance,58.4,5.1,9.07,2024-02-16,9,4,138,15,5.0,15.530821917808222
+Bowers-Walker,APAC,Manufacturing,Multi-Cloud,True,5,8,49.0,9,45,Quality Control,14.4,23.4,11.06,2025-01-30,6,8,20,81,7.0,76.80555555555556
+Moore-Schwartz,Canada,Insurance,Multi-Cloud,True,3,8,288.6,11,45,Personalization,48.4,15.6,6.79,2025-03-25,1,2,33,52,4.333333333333333,14.028925619834713
+Turner Group,US-East,Retail,AWS,True,9,9,337.2,16,40,Customer Churn Prediction,88.1,12.3,11.17,2023-09-16,3,7,10,93,8.333333333333334,12.67877412031782
+Rodriguez-Harper,US-West,Energy,AWS,True,9,1,349.3,2,360,Fraud Detection,81.6,19.5,6.82,2025-03-24,9,8,51,0,6.0,8.357843137254903
+Morgan-Patterson,US-East,Banking,GCP,True,6,10,334.4,14,36,Customer Churn Prediction,51.7,17.3,12.26,2023-10-12,8,2,110,41,6.0,23.7137330754352
+Thomas Inc,APAC,Manufacturing,Multi-Cloud,True,7,10,405.1,27,36,Risk Assessment,33.4,24.1,12.02,2024-11-02,10,1,15,66,6.0,35.98802395209581
+"Bartlett, Payne and Miranda",US-East,Insurance,AWS,False,5,4,230.2,7,90,Fraud Detection,29.8,6.8,3.91,2024-07-15,6,5,132,10,4.666666666666667,13.120805369127517
+"Vance, Peters and King",US-East,Retail,Azure,True,5,9,61.1,18,40,Customer Churn Prediction,90.2,6.9,10.79,2025-05-04,4,5,144,94,6.333333333333333,11.96230598669623
+Johnson-Miller,US-West,Energy,GCP,False,5,2,280.4,3,180,Fraud Detection,64.8,15.1,3.51,2024-06-26,4,5,48,23,4.0,5.416666666666667
+Taylor and Sons,Canada,Retail,AWS,False,5,3,205.6,1,120,Risk Assessment,21.1,17.6,3.3,2024-02-13,9,6,93,23,4.666666666666667,15.639810426540283
+Rubio-Henry,MEA,Telecommunications,Azure,False,10,5,152.3,10,72,Personalization,40.4,20.5,8.27,2024-05-01,7,8,5,73,7.666666666666667,20.47029702970297
+Banks-Morris,EMEA,Energy,GCP,True,7,10,345.2,28,36,Risk Assessment,35.7,21.6,14.38,2023-11-03,8,8,66,79,8.333333333333334,40.280112044817926
+Frey and Sons,MEA,Telecommunications,GCP,True,2,7,284.3,4,51,Risk Assessment,94.4,12.1,5.46,2024-10-29,4,5,11,74,4.666666666666667,5.783898305084746
+"Ramirez, Soto and Davies",MEA,Retail,GCP,False,10,4,19.3,11,90,Fraud Detection,54.6,7.6,7.79,2024-05-21,1,2,35,20,5.333333333333333,14.267399267399266
+"Hart, Thompson and Smith",LATAM,Retail,GCP,True,1,8,344.4,4,45,Demand Forecasting,36.4,14.0,6.3,2025-05-03,3,4,84,112,4.333333333333333,17.307692307692307
+Lewis-Nguyen,EMEA,Retail,GCP,True,2,9,378.9,17,40,Demand Forecasting,38.9,5.8,7.87,2023-06-28,5,10,146,40,7.0,20.231362467866326
+"Ramirez, Bolton and Morgan",MEA,Technology,GCP,True,6,6,114.0,13,60,Risk Assessment,45.2,17.0,9.73,2023-12-18,6,7,60,86,6.333333333333333,21.52654867256637
+Marsh and Sons,MEA,Insurance,Multi-Cloud,True,9,5,38.8,12,72,Fraud Detection,91.3,8.7,11.82,2024-02-06,6,1,38,34,5.0,12.94633077765608
+Rios LLC,Canada,Manufacturing,AWS,True,3,10,351.1,15,36,Predictive Maintenance,57.9,6.7,8.69,2024-03-17,10,8,120,14,7.0,15.008635578583766
+"Salazar, Dyer and Webster",US-East,Energy,Multi-Cloud,True,7,4,137.5,5,90,Fraud Detection,66.7,11.1,8.24,2025-06-03,2,5,46,38,5.333333333333333,12.353823088455771
+"Vazquez, Rose and Reese",LATAM,Technology,Azure,False,9,2,67.6,1,180,Document Processing,36.3,12.2,4.52,2023-06-20,8,5,57,23,5.333333333333333,12.451790633608816
+Jenkins-Miller,EMEA,Technology,Multi-Cloud,True,2,2,107.2,1,180,Demand Forecasting,31.9,6.9,2.97,2024-09-30,5,3,16,2,2.3333333333333335,9.310344827586208
+"Fleming, Park and Turner",US-East,Retail,AWS,True,7,10,94.2,10,36,Predictive Maintenance,50.2,17.9,14.61,2023-08-23,3,1,117,106,6.0,29.103585657370516
+Davis Group,Canada,Insurance,AWS,True,6,5,94.0,13,72,Document Processing,12.6,20.8,9.41,2024-11-25,10,9,41,14,6.666666666666667,74.68253968253968
+Powers and Sons,US-East,Telecommunications,AWS,False,9,7,411.9,8,51,Personalization,55.3,17.0,6.63,2024-04-28,7,3,53,4,6.333333333333333,11.989150090415913
+Reeves PLC,EMEA,Telecommunications,Azure,True,6,1,205.8,2,360,Quality Control,97.1,23.1,6.29,2024-09-29,6,4,47,14,3.6666666666666665,6.477857878475798
+"Lowe, Parker and Hunt",MEA,Telecommunications,AWS,True,7,5,175.5,5,72,Quality Control,34.7,15.5,8.21,2024-11-04,6,2,110,75,4.666666666666667,23.659942363112393
+White-Hansen,APAC,Telecommunications,GCP,True,1,6,434.5,9,60,Predictive Maintenance,64.8,22.4,4.4,2024-08-17,7,6,48,14,4.333333333333333,6.790123456790124
+Kelly-Cooper,EMEA,Retail,Multi-Cloud,True,7,8,248.8,14,45,Risk Assessment,48.4,14.4,12.69,2025-02-11,3,6,38,109,7.0,26.21900826446281
+Andrews Group,US-West,Banking,Multi-Cloud,False,7,2,415.2,5,180,Fraud Detection,13.7,11.3,4.3,2024-08-01,3,5,126,25,4.666666666666667,31.386861313868614
+"Wilson, Anderson and Hickman",APAC,Insurance,GCP,True,10,4,100.2,5,90,Document Processing,90.0,13.1,10.9,2023-10-15,4,5,127,15,6.333333333333333,12.11111111111111
+Ross Inc,US-West,Technology,AWS,True,4,6,227.8,15,60,Quality Control,29.5,23.9,6.57,2023-09-28,3,3,37,33,4.333333333333333,22.27118644067797
+Moss PLC,EMEA,Healthcare,Multi-Cloud,True,8,7,371.4,4,51,Risk Assessment,47.2,20.5,12.25,2024-04-23,5,7,51,38,7.333333333333333,25.95338983050847
+"Acevedo, Avery and Giles",APAC,Retail,Azure,True,8,10,3.3,28,36,Personalization,57.5,24.4,13.46,2025-01-13,2,6,64,43,8.0,23.408695652173915
+Williams-Rodriguez,APAC,Technology,AWS,True,5,6,454.8,16,60,Risk Assessment,22.1,13.5,8.17,2024-04-30,4,8,76,79,6.333333333333333,36.9683257918552
+Wong Inc,MEA,Telecommunications,Multi-Cloud,True,2,6,351.3,4,60,Fraud Detection,12.0,16.7,4.99,2024-06-16,1,3,133,3,3.6666666666666665,41.583333333333336
+Johnson PLC,LATAM,Energy,Multi-Cloud,True,7,8,81.7,19,45,Demand Forecasting,42.6,17.7,11.35,2023-07-05,3,5,49,88,6.666666666666667,26.64319248826291
+"Hudson, Mckenzie and Clements",Canada,Healthcare,Multi-Cloud,True,4,2,234.7,3,180,Customer Churn Prediction,89.2,13.8,4.58,2024-04-13,3,3,7,17,3.0,5.134529147982063
+Browning Ltd,US-West,Healthcare,Multi-Cloud,False,7,6,246.6,4,60,Quality Control,46.2,23.7,7.12,2025-06-01,6,1,109,22,4.666666666666667,15.411255411255413
+Roth-Mcguire,MEA,Telecommunications,Azure,True,2,1,359.5,0,360,Customer Churn Prediction,96.2,15.3,2.19,2023-06-29,6,3,23,8,2.0,2.2765072765072762
+"Cowan, Avila and Anderson",US-West,Technology,Azure,True,3,7,452.8,5,51,Customer Churn Prediction,66.9,9.4,7.32,2024-06-27,8,3,117,58,4.333333333333333,10.941704035874439
+Martin LLC,MEA,Energy,Multi-Cloud,True,1,1,42.3,0,360,Customer Churn Prediction,85.2,23.8,1.32,2024-11-24,4,9,28,2,3.6666666666666665,1.5492957746478873
+Bartlett-Ross,US-East,Banking,Azure,False,5,2,424.8,5,180,Demand Forecasting,89.2,18.3,3.2,2024-07-08,10,9,122,11,5.333333333333333,3.587443946188341
+"Johnson, Wilson and Johnson",US-East,Healthcare,AWS,False,7,10,378.0,23,36,Document Processing,66.6,5.7,10.14,2024-01-06,1,3,79,95,6.666666666666667,15.225225225225229
+Mcmillan and Sons,APAC,Energy,Azure,False,8,10,196.0,28,36,Predictive Maintenance,81.6,22.4,7.57,2023-06-21,9,4,8,6,7.333333333333333,9.276960784313726
+Davis PLC,MEA,Energy,Multi-Cloud,True,6,3,443.6,8,120,Risk Assessment,51.5,9.7,7.45,2025-02-18,1,7,142,30,5.333333333333333,14.466019417475728
+Bradley-Brown,EMEA,Healthcare,AWS,True,10,1,362.8,1,360,Predictive Maintenance,21.3,24.7,7.41,2024-10-11,8,1,40,13,4.0,34.78873239436619
+Smith Ltd,EMEA,Telecommunications,AWS,False,9,8,100.0,17,45,Document Processing,86.3,6.4,8.87,2024-01-29,7,6,112,46,7.666666666666667,10.278099652375435
+Rogers-Wright,LATAM,Healthcare,Azure,True,10,4,387.3,2,90,Personalization,18.7,6.3,9.07,2023-11-16,4,6,36,39,6.666666666666667,48.50267379679145
+Martinez-Vasquez,LATAM,Retail,GCP,False,4,2,184.5,4,180,Document Processing,74.8,23.0,3.26,2023-09-24,5,2,130,11,2.6666666666666665,4.358288770053475
+Green-Wilson,LATAM,Energy,Multi-Cloud,True,5,4,389.1,5,90,Risk Assessment,82.7,24.5,7.44,2024-09-25,3,7,81,32,5.333333333333333,8.996372430471585
+Myers-Watkins,LATAM,Banking,GCP,False,6,10,407.3,5,36,Fraud Detection,6.4,13.1,8.48,2024-02-08,3,6,118,140,7.333333333333333,132.5
+Johnson-Nelson,Canada,Manufacturing,AWS,True,9,6,184.8,7,60,Quality Control,18.4,22.1,10.2,2024-03-29,2,9,99,43,8.0,55.434782608695656
+Dominguez-Heath,US-East,Technology,AWS,True,10,2,320.6,3,180,Demand Forecasting,32.2,14.9,8.83,2025-01-27,3,5,141,11,5.666666666666667,27.4223602484472
+Wong PLC,APAC,Insurance,AWS,False,4,6,254.8,7,60,Predictive Maintenance,99.0,17.4,4.61,2024-10-10,3,9,78,69,6.333333333333333,4.656565656565657
+Lewis-Flowers,US-East,Insurance,Multi-Cloud,True,3,5,292.4,6,72,Document Processing,34.2,15.5,4.89,2025-04-02,5,6,92,74,4.666666666666667,14.298245614035086
+Lewis and Sons,US-East,Technology,AWS,False,6,9,471.5,10,40,Demand Forecasting,68.6,19.0,7.03,2024-12-14,5,9,128,61,8.0,10.247813411078718
+Webb Inc,LATAM,Energy,GCP,False,10,10,486.2,11,36,Fraud Detection,34.1,9.5,10.64,2024-08-28,2,6,30,13,8.666666666666666,31.20234604105572
+Keith Inc,US-East,Technology,GCP,True,8,6,181.6,13,60,Risk Assessment,94.9,11.1,9.53,2023-12-08,7,9,22,6,7.666666666666667,10.042149631190727
+"Jarvis, West and Campbell",LATAM,Retail,Multi-Cloud,True,9,7,381.1,19,51,Risk Assessment,28.5,14.0,12.79,2023-07-14,10,4,132,15,6.666666666666667,44.87719298245614
+Clark Ltd,MEA,Telecommunications,Azure,False,9,3,191.3,6,120,Fraud Detection,86.3,24.7,5.18,2024-08-25,3,5,53,2,5.666666666666667,6.002317497103128
+Schultz-Brown,LATAM,Retail,Multi-Cloud,True,9,3,155.1,4,120,Document Processing,26.5,18.9,8.18,2024-08-18,1,10,59,21,7.333333333333333,30.867924528301888
+"Butler, Johnson and Garrison",APAC,Energy,AWS,False,2,10,371.0,9,36,Personalization,14.2,21.7,5.33,2024-05-03,6,3,109,101,5.0,37.53521126760563
+Cole-Ortiz,APAC,Banking,Azure,True,3,4,211.7,5,90,Risk Assessment,37.5,11.4,5.02,2024-09-13,3,1,125,19,2.6666666666666665,13.386666666666667
+Stevens Inc,MEA,Retail,AWS,True,2,6,75.5,5,60,Predictive Maintenance,23.6,19.6,5.56,2023-10-05,5,1,50,18,3.0,23.559322033898304
+"Martinez, Dalton and Moran",APAC,Technology,Multi-Cloud,False,4,10,312.8,18,36,Quality Control,48.8,14.9,5.92,2024-02-21,8,8,41,90,7.333333333333333,12.131147540983607
+"Sanders, Miller and Walters",US-West,Technology,Multi-Cloud,False,1,1,31.8,2,360,Fraud Detection,8.8,12.0,0.81,2023-07-09,1,2,43,10,1.3333333333333333,9.204545454545453
+Castillo-Jefferson,LATAM,Manufacturing,GCP,True,3,9,393.9,14,40,Customer Churn Prediction,35.3,19.1,8.14,2025-04-30,4,10,17,115,7.333333333333333,23.05949008498584
+Miller Group,Canada,Banking,Azure,True,6,1,129.9,2,360,Risk Assessment,48.8,5.5,6.08,2023-11-13,2,2,131,14,3.0,12.459016393442624
+"Rose, Walker and Barnes",EMEA,Telecommunications,AWS,True,7,4,212.9,6,90,Demand Forecasting,57.5,7.6,8.96,2024-05-28,2,7,104,51,6.0,15.582608695652175
+Cruz-Moore,EMEA,Telecommunications,GCP,False,9,4,379.5,8,90,Risk Assessment,10.3,5.1,5.92,2024-02-05,6,4,115,28,5.666666666666667,57.4757281553398
+"Rogers, Young and Ruiz",EMEA,Telecommunications,Azure,False,3,1,1.6,2,360,Fraud Detection,19.4,12.2,2.29,2024-07-20,10,4,117,13,2.6666666666666665,11.804123711340207
+Matthews-Hoover,Canada,Technology,GCP,True,9,8,175.2,22,45,Quality Control,62.3,16.1,12.27,2023-08-09,6,7,148,57,8.0,19.69502407704655
+Smith-Gibson,MEA,Technology,GCP,True,9,6,345.3,5,60,Fraud Detection,14.1,10.5,10.74,2024-07-19,2,1,25,10,5.333333333333333,76.17021276595744
+Carpenter Group,US-West,Manufacturing,Azure,True,8,5,272.4,6,72,Customer Churn Prediction,25.1,14.5,8.03,2024-02-26,2,2,38,12,5.0,31.99203187250996
+"Strickland, Flowers and Smith",US-West,Healthcare,Azure,True,4,3,146.0,7,120,Quality Control,54.0,21.4,5.3,2024-05-26,9,5,82,3,4.0,9.814814814814815
+"Mathews, Lee and Edwards",US-East,Energy,GCP,True,4,6,50.5,17,60,Demand Forecasting,45.5,13.1,7.84,2025-03-16,8,8,30,67,6.0,17.23076923076923
+Rodriguez Group,US-West,Telecommunications,GCP,True,9,8,387.5,12,45,Customer Churn Prediction,56.4,18.0,11.56,2024-08-28,2,10,22,83,9.0,20.49645390070922
+Figueroa-Anderson,US-East,Telecommunications,Azure,True,6,10,409.6,8,36,Personalization,64.9,14.4,10.33,2024-04-23,4,9,132,135,8.333333333333334,15.916795069337441
+Henderson-Johnson,MEA,Telecommunications,Azure,True,3,8,455.5,20,45,Demand Forecasting,39.1,7.4,7.96,2024-09-24,10,10,49,47,7.0,20.358056265984654
+Miller and Sons,APAC,Telecommunications,AWS,True,3,7,160.9,11,51,Personalization,23.7,10.7,6.91,2024-08-11,6,8,115,9,6.0,29.15611814345992
+"Lee, Davis and Anderson",APAC,Insurance,Azure,True,3,5,124.7,7,72,Customer Churn Prediction,43.5,11.0,6.16,2024-06-29,10,10,18,14,6.0,14.160919540229886
+Black Inc,APAC,Insurance,Multi-Cloud,True,7,7,223.6,20,51,Customer Churn Prediction,95.2,16.2,9.97,2024-06-22,8,2,46,23,5.333333333333333,10.472689075630253
+Taylor and Sons,US-West,Healthcare,Azure,False,7,3,452.9,1,120,Fraud Detection,64.4,17.3,4.27,2025-02-25,9,7,15,14,5.666666666666667,6.6304347826086945
+Nichols-Brady,US-West,Healthcare,Multi-Cloud,True,4,4,17.7,5,90,Fraud Detection,88.1,19.1,5.55,2024-08-30,7,6,14,36,4.666666666666667,6.2996594778660615
+"Vaughn, Smith and White",US-East,Banking,Azure,True,9,4,301.7,6,90,Customer Churn Prediction,43.7,19.0,10.02,2024-06-10,6,1,82,6,4.666666666666667,22.929061784897023
+Watkins-Smith,Canada,Technology,Multi-Cloud,True,9,2,218.1,2,180,Fraud Detection,39.3,19.7,6.97,2025-01-27,2,9,64,23,6.666666666666667,17.735368956743002
+"Simmons, Hayes and Richardson",US-East,Energy,GCP,False,10,3,182.1,3,120,Risk Assessment,46.0,12.0,6.81,2024-08-14,10,10,57,14,7.666666666666667,14.804347826086955
+Davis-Kidd,EMEA,Banking,Multi-Cloud,True,2,10,275.6,10,36,Customer Churn Prediction,40.6,19.9,8.91,2023-10-26,6,2,22,70,4.666666666666667,21.945812807881772
+Hoover-Wright,US-West,Manufacturing,AWS,True,7,9,403.8,7,40,Personalization,87.7,7.4,9.72,2024-01-14,5,4,12,25,6.666666666666667,11.083238312428735
+"Smith, Reese and Mccarthy",US-East,Manufacturing,AWS,True,2,9,310.3,12,40,Customer Churn Prediction,92.8,5.0,7.98,2023-11-16,9,4,139,55,5.0,8.599137931034484
+Jackson and Sons,US-West,Manufacturing,Azure,False,8,2,282.8,2,180,Customer Churn Prediction,68.1,6.0,5.21,2024-06-23,4,7,17,23,5.666666666666667,7.650513950073422
+Carr Ltd,APAC,Energy,AWS,True,5,5,37.3,4,72,Quality Control,36.6,19.3,7.08,2024-07-05,2,8,19,61,6.0,19.344262295081965
+Robinson LLC,US-West,Technology,Multi-Cloud,False,10,3,417.5,8,120,Quality Control,54.7,17.7,7.79,2024-10-27,5,1,122,41,4.666666666666667,14.241316270566726
+"Black, Williams and Miles",US-West,Telecommunications,GCP,True,5,3,77.5,1,120,Demand Forecasting,39.8,23.3,5.65,2024-11-07,10,7,33,18,5.0,14.195979899497491
+"Powell, Sullivan and Hansen",APAC,Healthcare,Multi-Cloud,False,2,4,226.7,7,90,Quality Control,29.8,20.9,3.26,2025-01-07,5,6,78,10,4.0,10.93959731543624
+Flores-Fuentes,US-West,Healthcare,AWS,True,7,4,169.8,7,90,Document Processing,14.0,15.1,8.72,2024-02-20,10,6,111,3,5.666666666666667,62.28571428571429
+"Davis, Payne and Romero",Canada,Telecommunications,AWS,True,1,10,139.0,27,36,Risk Assessment,8.5,8.9,7.49,2025-01-04,1,9,61,38,6.666666666666667,88.11764705882354
+Haney-Gray,US-West,Technology,AWS,True,5,4,181.4,6,90,Quality Control,30.8,5.8,6.05,2025-03-24,4,7,123,33,5.333333333333333,19.642857142857142
+"Allen, Crawford and Gray",US-East,Insurance,GCP,False,3,9,177.8,20,40,Demand Forecasting,10.0,11.5,6.32,2024-03-11,6,1,90,21,4.333333333333333,63.2
+"Hughes, Campbell and Wilson",MEA,Insurance,GCP,True,3,3,348.1,1,120,Quality Control,8.3,24.0,4.09,2023-08-19,9,9,36,20,5.0,49.27710843373493
+"Thompson, Dickerson and Jimenez",LATAM,Insurance,AWS,True,4,2,323.8,5,180,Fraud Detection,70.7,17.4,4.42,2024-10-25,10,2,117,18,2.6666666666666665,6.251768033946252
+Cruz and Sons,LATAM,Technology,Multi-Cloud,True,3,1,433.7,1,360,Personalization,14.8,6.0,2.79,2024-03-17,5,10,88,10,4.666666666666667,18.85135135135135
+Larsen Inc,Canada,Retail,Azure,False,7,5,205.8,14,72,Risk Assessment,50.4,8.5,4.89,2024-03-24,7,10,46,16,7.333333333333333,9.702380952380953
+Fischer-Morrison,US-East,Healthcare,GCP,True,7,3,280.2,3,120,Quality Control,74.8,10.2,8.14,2023-06-28,10,10,62,5,6.666666666666667,10.882352941176473
+"Jefferson, Bond and Johnston",US-East,Telecommunications,AWS,True,5,5,85.3,7,72,Fraud Detection,92.9,19.5,6.2,2024-07-19,5,9,72,39,6.333333333333333,6.673842841765339
+Sparks-Patterson,US-East,Healthcare,Azure,True,4,10,349.7,11,36,Fraud Detection,92.1,21.7,11.49,2023-07-14,9,10,140,147,8.0,12.475570032573291
+Martinez Group,LATAM,Retail,GCP,True,3,7,484.7,15,51,Quality Control,78.9,5.7,6.69,2025-02-03,2,6,55,37,5.333333333333333,8.479087452471482
+Roman Ltd,Canada,Energy,Azure,True,6,4,196.6,5,90,Customer Churn Prediction,70.4,22.6,6.64,2025-04-09,8,1,137,2,3.6666666666666665,9.43181818181818
+Wilson Inc,LATAM,Energy,AWS,False,2,9,487.7,6,40,Demand Forecasting,66.3,9.9,5.94,2025-02-22,9,7,105,67,6.0,8.95927601809955
+"Camacho, Reid and Bentley",Canada,Energy,AWS,True,6,10,464.5,16,36,Demand Forecasting,23.6,13.2,14.01,2024-11-08,10,10,113,103,8.666666666666666,59.36440677966102
+"Blair, Stevens and Miller",MEA,Energy,GCP,True,7,3,389.5,6,120,Document Processing,76.3,23.5,6.41,2024-09-09,3,8,93,24,6.0,8.401048492791613
+"Snow, Hill and Donovan",EMEA,Banking,AWS,True,2,9,96.0,4,40,Document Processing,22.4,22.1,7.74,2024-03-10,2,2,102,32,4.333333333333333,34.55357142857143
+"Howell, Ross and Lopez",US-West,Insurance,Multi-Cloud,True,10,10,29.7,12,36,Customer Churn Prediction,97.8,20.5,14.5,2024-05-08,4,7,56,75,9.0,14.826175869120656
+Martinez and Sons,US-East,Manufacturing,Multi-Cloud,True,6,3,294.3,7,120,Quality Control,38.9,6.9,6.04,2024-01-10,9,9,142,27,6.0,15.526992287917738
+Mcgee-Davis,US-East,Healthcare,Azure,True,4,7,313.2,16,51,Fraud Detection,20.0,23.2,8.2,2024-10-03,7,6,9,93,5.666666666666667,41.0
+"Ortiz, Velasquez and Nolan",Canada,Energy,GCP,True,3,10,327.8,21,36,Predictive Maintenance,37.1,24.5,9.96,2024-02-13,5,1,40,44,4.666666666666667,26.84636118598383
+"Mack, Davis and Garcia",MEA,Manufacturing,AWS,True,4,9,141.3,4,40,Personalization,7.7,10.5,9.13,2023-06-29,6,4,73,18,5.666666666666667,118.57142857142857
+Schultz-Short,US-East,Telecommunications,AWS,True,5,4,36.5,8,90,Customer Churn Prediction,30.2,16.8,5.77,2023-09-07,8,6,138,40,5.0,19.105960264900663
+"Foley, Pearson and Oconnor",LATAM,Technology,GCP,True,5,9,345.8,24,40,Document Processing,43.3,11.2,12.5,2024-07-20,6,1,80,67,5.0,28.86836027713626
+Perez-Collins,LATAM,Banking,GCP,True,1,7,364.2,15,51,Document Processing,77.7,7.8,6.51,2023-08-01,4,3,81,51,3.6666666666666665,8.378378378378377
+"Freeman, Warner and Perkins",Canada,Telecommunications,GCP,True,2,8,123.9,14,45,Personalization,83.3,18.7,8.98,2023-07-03,4,8,50,93,6.0,10.78031212484994
+Welch PLC,APAC,Manufacturing,Azure,True,1,8,246.4,23,45,Personalization,71.5,21.0,6.74,2024-01-06,8,3,119,113,4.0,9.426573426573427
+"Robinson, Duran and Hall",US-West,Manufacturing,GCP,False,8,10,213.4,7,36,Document Processing,67.4,14.8,9.15,2024-10-22,9,5,42,108,7.666666666666667,13.57566765578635
+Miller LLC,EMEA,Healthcare,GCP,True,3,5,477.8,10,72,Personalization,46.7,15.4,5.17,2025-02-03,1,9,54,70,5.666666666666667,11.070663811563168
+"Maldonado, Brewer and Collins",APAC,Healthcare,Multi-Cloud,True,2,6,201.8,16,60,Quality Control,86.2,12.7,6.27,2025-05-12,2,3,89,18,3.6666666666666665,7.273781902552204
+Walsh-Chase,EMEA,Healthcare,AWS,False,4,8,80.9,16,45,Quality Control,49.6,22.1,5.51,2024-01-17,1,9,78,56,7.0,11.108870967741936
+Morales-Edwards,EMEA,Banking,Azure,False,8,10,384.9,12,36,Demand Forecasting,5.4,18.9,9.1,2023-11-23,5,10,83,124,9.333333333333334,168.5185185185185
+"Scott, Barnes and Hernandez",MEA,Healthcare,Multi-Cloud,True,6,3,322.6,7,120,Fraud Detection,95.4,20.8,7.64,2023-07-09,3,9,133,39,6.0,8.0083857442348
+Young Group,MEA,Telecommunications,GCP,True,10,4,499.1,8,90,Customer Churn Prediction,22.1,17.0,9.44,2023-06-26,5,9,146,27,7.666666666666667,42.71493212669682
+Robertson-Hodges,MEA,Technology,Multi-Cloud,True,7,9,183.6,10,40,Predictive Maintenance,26.5,15.7,12.75,2023-12-03,7,7,10,38,7.666666666666667,48.113207547169814
+Padilla Group,US-West,Manufacturing,GCP,True,1,7,161.8,18,51,Fraud Detection,8.5,20.8,6.63,2024-05-25,8,8,18,7,5.333333333333333,78.0
+Anderson LLC,EMEA,Technology,Multi-Cloud,True,4,6,361.5,9,60,Fraud Detection,57.1,7.8,7.39,2024-07-21,2,5,77,39,5.0,12.942206654991242
+"Terry, Anderson and Beck",EMEA,Healthcare,AWS,True,8,6,219.4,17,60,Quality Control,34.7,20.1,11.38,2023-08-23,6,1,112,7,5.0,32.79538904899135
+"Jones, Simmons and Lopez",US-East,Energy,Multi-Cloud,True,8,7,405.3,4,51,Quality Control,97.2,22.0,10.67,2025-04-20,7,10,72,89,8.333333333333334,10.977366255144034
+Gilmore-Steele,US-West,Energy,AWS,True,1,3,337.2,5,120,Quality Control,63.8,16.1,3.16,2024-04-08,8,7,113,18,3.6666666666666665,4.952978056426333
+"Evans, Bennett and Rodriguez",Canada,Retail,Multi-Cloud,False,2,5,58.7,4,72,Quality Control,57.9,16.1,3.87,2025-02-23,6,3,142,24,3.3333333333333335,6.6839378238341975
+Smith-Collins,EMEA,Insurance,Azure,True,4,6,341.4,17,60,Fraud Detection,18.4,18.1,8.02,2024-11-07,8,10,115,87,6.666666666666667,43.58695652173913
+Pierce Inc,MEA,Telecommunications,GCP,True,6,9,174.3,16,40,Risk Assessment,55.8,14.3,9.99,2023-12-12,2,10,105,56,8.333333333333334,17.903225806451616
+"Ray, Boyle and Williams",EMEA,Manufacturing,AWS,False,5,2,321.0,1,180,Risk Assessment,65.7,8.6,3.93,2025-01-28,4,5,28,15,4.0,5.981735159817352
+"Brown, Bishop and West",MEA,Energy,Azure,True,5,3,293.0,4,120,Quality Control,43.3,8.4,5.86,2024-03-11,1,7,91,22,5.0,13.533487297921479
+Rubio Ltd,Canada,Telecommunications,GCP,True,3,3,412.5,3,120,Predictive Maintenance,62.7,8.0,3.7,2024-11-17,8,5,52,44,3.6666666666666665,5.901116427432217
+Watkins-Brown,LATAM,Manufacturing,Azure,True,8,9,130.1,21,40,Demand Forecasting,41.4,13.8,12.36,2024-05-04,2,9,144,88,8.666666666666666,29.855072463768117
+"Cline, Robinson and Perry",LATAM,Insurance,AWS,False,4,5,287.5,5,72,Fraud Detection,64.9,11.4,4.28,2025-05-08,2,1,32,34,3.3333333333333335,6.594761171032356
+"Li, Walker and Perez",US-East,Manufacturing,AWS,True,1,6,220.7,7,60,Predictive Maintenance,23.4,17.9,5.08,2025-03-15,2,7,41,86,4.666666666666667,21.70940170940171
+"Alvarez, Curtis and Brooks",LATAM,Technology,Azure,False,9,5,443.4,2,72,Document Processing,59.9,19.7,7.69,2023-08-12,10,5,136,24,6.333333333333333,12.83806343906511
+Lucas-Montoya,US-West,Technology,Azure,True,4,4,490.2,3,90,Fraud Detection,21.2,22.9,7.1,2023-11-07,7,7,77,53,5.0,33.490566037735846
+"Brooks, Webster and Fritz",EMEA,Retail,AWS,True,4,5,473.7,8,72,Demand Forecasting,90.0,20.4,6.96,2024-07-08,7,1,92,7,3.3333333333333335,7.733333333333333
+Ruiz-Martinez,EMEA,Manufacturing,Azure,False,8,2,205.2,1,180,Risk Assessment,25.4,8.5,5.49,2024-04-03,8,9,81,18,6.333333333333333,21.61417322834646
+Ross-Velazquez,EMEA,Manufacturing,Multi-Cloud,True,6,9,110.8,15,40,Demand Forecasting,62.3,18.4,12.08,2025-01-17,5,2,46,116,5.666666666666667,19.390048154093098
+Mclaughlin-Andrews,LATAM,Telecommunications,AWS,True,6,2,77.6,4,180,Document Processing,21.3,17.9,6.21,2023-07-11,4,9,39,2,5.666666666666667,29.154929577464788
+"Shannon, Wilcox and Potts",EMEA,Insurance,GCP,True,8,7,488.5,4,51,Risk Assessment,86.2,21.7,10.35,2023-08-13,3,2,51,98,5.666666666666667,12.006960556844547
+Collins-White,LATAM,Telecommunications,AWS,True,6,7,380.1,12,51,Demand Forecasting,64.9,10.4,8.58,2025-05-14,6,3,15,44,5.333333333333333,13.220338983050848
+"Johnson, Simpson and Barker",MEA,Retail,GCP,False,1,10,390.7,11,36,Fraud Detection,71.4,20.1,4.91,2025-05-11,8,5,18,113,5.333333333333333,6.876750700280112
+Torres and Sons,US-West,Technology,Azure,False,1,5,132.5,11,72,Risk Assessment,29.9,8.3,2.87,2023-12-22,2,3,76,26,3.0,9.598662207357862
+"Bridges, Baxter and Houston",MEA,Insurance,AWS,True,10,5,8.0,12,72,Predictive Maintenance,92.0,7.5,10.21,2023-09-18,8,5,61,21,6.666666666666667,11.097826086956522
+West-Bailey,APAC,Insurance,GCP,False,4,8,151.8,11,45,Personalization,44.8,16.9,6.52,2025-02-03,3,7,110,85,6.333333333333333,14.553571428571429
+Cabrera Group,LATAM,Banking,GCP,True,6,10,452.0,17,36,Demand Forecasting,30.7,15.6,11.11,2023-10-18,8,3,101,65,6.333333333333333,36.188925081433226
+Farmer-Hobbs,US-West,Banking,Multi-Cloud,True,8,1,47.7,0,360,Document Processing,58.8,22.0,6.13,2024-04-19,6,10,72,6,6.333333333333333,10.42517006802721
+Herman Inc,US-West,Banking,Multi-Cloud,True,6,7,218.2,17,51,Predictive Maintenance,68.7,18.3,9.01,2023-10-17,1,4,122,86,5.666666666666667,13.11499272197962
+"Hoffman, Phelps and Frazier",APAC,Technology,AWS,True,2,10,188.1,27,36,Risk Assessment,26.9,17.4,10.48,2023-10-21,3,8,51,61,6.666666666666667,38.95910780669145
+"Powell, Wright and Juarez",US-East,Banking,GCP,False,4,1,259.5,1,360,Customer Churn Prediction,32.8,5.6,2.29,2024-11-02,8,7,144,9,4.0,6.981707317073171
+"Thomas, Rodriguez and Smith",EMEA,Technology,GCP,False,2,10,219.9,15,36,Customer Churn Prediction,82.3,14.7,6.5,2024-03-27,5,10,128,113,7.333333333333333,7.897934386391252
+Knight and Sons,Canada,Healthcare,Multi-Cloud,False,8,7,231.0,6,51,Predictive Maintenance,92.8,21.4,7.2,2025-02-28,3,3,11,23,6.0,7.758620689655173
+"Haas, Woods and Thompson",Canada,Technology,AWS,True,4,5,376.2,6,72,Predictive Maintenance,69.0,13.1,5.74,2024-01-28,5,3,80,2,4.0,8.318840579710145
+"White, Hall and Brown",LATAM,Banking,GCP,True,5,9,326.1,11,40,Demand Forecasting,68.8,12.0,9.91,2023-09-13,6,7,105,97,7.0,14.40406976744186
+Joseph-Morrow,US-East,Telecommunications,Azure,True,1,2,171.7,3,180,Customer Churn Prediction,94.2,24.6,2.15,2024-07-29,8,4,65,8,2.3333333333333335,2.282377919320594
+"Berry, Miller and Lewis",US-East,Telecommunications,Multi-Cloud,False,7,5,488.8,9,72,Risk Assessment,97.1,16.1,5.13,2025-03-27,2,1,68,3,4.333333333333333,5.283213182286303
+Bush PLC,US-East,Healthcare,AWS,False,1,4,403.7,10,90,Quality Control,59.5,24.0,2.47,2024-06-19,2,2,22,59,2.3333333333333335,4.151260504201681
+"Buckley, Norman and Jones",EMEA,Manufacturing,GCP,False,5,4,422.5,3,90,Document Processing,49.3,10.1,4.16,2024-02-16,3,1,13,44,3.3333333333333335,8.438133874239352
+"Finley, Freeman and Burns",LATAM,Healthcare,Azure,True,4,3,254.9,7,120,Predictive Maintenance,26.7,5.1,6.16,2023-11-04,2,9,48,44,5.333333333333333,23.07116104868914
+Weiss Group,EMEA,Retail,Multi-Cloud,True,2,5,138.9,13,72,Fraud Detection,31.5,9.9,6.19,2024-08-07,6,3,89,12,3.3333333333333335,19.650793650793652
+Miller Group,EMEA,Technology,Azure,False,10,5,346.7,14,72,Fraud Detection,12.4,17.3,8.18,2024-03-08,7,6,101,23,7.0,65.96774193548387
+Ramirez Group,US-East,Retail,Multi-Cloud,True,5,2,368.0,1,180,Document Processing,7.3,12.9,4.6,2024-07-13,7,7,26,8,4.666666666666667,63.013698630136986
+Ponce Group,LATAM,Technology,Azure,True,7,4,117.1,4,90,Document Processing,84.2,23.1,7.19,2023-08-29,3,5,11,2,5.333333333333333,8.539192399049881
+"Mendez, Gomez and Lawson",US-East,Insurance,Azure,True,7,9,421.5,16,40,Fraud Detection,30.4,6.0,12.99,2024-05-25,6,9,131,90,8.333333333333334,42.73026315789474
+"Haas, Bennett and Gibson",EMEA,Manufacturing,GCP,False,2,7,215.9,5,51,Customer Churn Prediction,25.9,14.6,4.6,2023-10-04,9,2,150,72,3.6666666666666665,17.760617760617762
+Wade-Anderson,US-West,Energy,Azure,True,2,1,300.3,0,360,Quality Control,35.6,6.9,2.47,2024-05-27,2,1,71,12,1.3333333333333333,6.938202247191011
+Brooks Ltd,LATAM,Banking,GCP,True,1,4,327.8,8,90,Predictive Maintenance,15.7,9.9,3.59,2024-08-12,4,5,112,50,3.3333333333333335,22.866242038216562
+Morris LLC,APAC,Technology,Multi-Cloud,True,5,3,21.9,2,120,Quality Control,51.4,8.7,5.07,2023-10-08,1,1,126,9,3.0,9.863813229571985
+"White, Church and Watson",Canada,Manufacturing,GCP,True,3,3,140.5,8,120,Predictive Maintenance,9.8,15.5,3.88,2024-06-26,4,6,115,38,4.0,39.59183673469388
+"Rogers, Taylor and West",US-East,Healthcare,Multi-Cloud,False,6,7,200.1,14,51,Demand Forecasting,26.8,24.0,6.24,2024-09-13,9,4,94,56,5.666666666666667,23.283582089552237
+Bryant-Rowe,EMEA,Technology,AWS,True,6,6,291.4,11,60,Document Processing,47.0,6.2,8.33,2023-12-20,7,3,130,30,5.0,17.72340425531915
+Jackson-Brown,LATAM,Manufacturing,Multi-Cloud,False,9,8,328.5,8,45,Customer Churn Prediction,24.6,5.8,8.53,2023-12-23,2,6,91,112,7.666666666666667,34.67479674796748
+Chapman-Andersen,US-West,Insurance,Azure,True,10,10,227.5,27,36,Risk Assessment,48.1,24.1,14.36,2023-07-25,1,10,69,133,10.0,29.85446985446985
+"Reynolds, Smith and Clark",LATAM,Insurance,Multi-Cloud,True,1,6,402.1,9,60,Document Processing,96.8,14.6,4.3,2023-07-11,5,10,66,40,5.666666666666667,4.4421487603305785
+"Gray, Harvey and Russell",Canada,Technology,GCP,False,3,9,109.1,25,40,Fraud Detection,31.1,20.6,6.8,2024-03-14,9,6,78,36,6.0,21.864951768488744
+Valentine-Bowers,LATAM,Banking,Multi-Cloud,False,1,3,360.5,6,120,Document Processing,40.2,5.3,1.98,2025-03-15,5,4,150,45,2.6666666666666665,4.925373134328358
+Smith and Sons,US-East,Telecommunications,AWS,True,3,3,89.1,4,120,Predictive Maintenance,12.9,7.5,4.19,2024-09-12,2,7,102,17,4.333333333333333,32.480620155038764
+"Hanna, Ruiz and Evans",EMEA,Insurance,Azure,True,6,10,274.0,11,36,Risk Assessment,47.7,10.0,12.71,2024-09-20,3,5,58,82,7.0,26.645702306079666
+"Davis, Jones and Salazar",MEA,Manufacturing,Azure,True,10,3,468.2,5,120,Predictive Maintenance,6.0,14.9,11.6,2023-08-04,2,10,20,38,7.666666666666667,193.33333333333334
+Strong-Stanley,LATAM,Banking,Azure,True,8,9,282.5,12,40,Demand Forecasting,39.9,7.8,13.88,2024-08-28,3,5,10,49,7.333333333333333,34.786967418546375
+Romero Inc,LATAM,Retail,Multi-Cloud,True,8,3,241.5,8,120,Personalization,57.7,5.0,9.7,2025-03-30,3,3,112,8,4.666666666666667,16.81109185441941
+Taylor-Kim,APAC,Manufacturing,GCP,False,7,1,362.9,0,360,Risk Assessment,96.6,17.1,4.55,2024-04-18,1,8,23,7,5.333333333333333,4.710144927536232
+Love-White,LATAM,Retail,GCP,True,4,8,374.6,8,45,Demand Forecasting,67.0,8.1,7.38,2024-07-13,1,10,71,109,7.333333333333333,11.014925373134329
+Ramirez LLC,MEA,Healthcare,AWS,True,6,6,333.6,11,60,Personalization,30.8,18.6,7.71,2025-03-08,1,7,10,40,6.333333333333333,25.032467532467535
+Clark and Sons,APAC,Telecommunications,Multi-Cloud,True,2,2,55.0,1,180,Predictive Maintenance,97.6,14.8,2.6,2023-12-05,6,2,134,5,2.0,2.6639344262295084
+"Miller, Sanchez and Williams",APAC,Healthcare,Azure,True,2,2,352.8,2,180,Fraud Detection,52.7,12.1,2.49,2024-04-26,3,4,49,6,2.6666666666666665,4.724857685009487
+Martinez Ltd,US-East,Retail,GCP,False,7,2,219.5,2,180,Document Processing,75.4,21.3,5.04,2024-06-01,7,8,102,27,5.666666666666667,6.684350132625995
+Richardson Ltd,EMEA,Manufacturing,Azure,True,3,10,48.2,29,36,Personalization,29.7,8.5,11.09,2025-02-13,9,5,40,137,6.0,37.34006734006734
+Wheeler-Johnson,US-West,Technology,GCP,True,6,9,393.2,23,40,Customer Churn Prediction,47.3,19.4,12.25,2023-10-22,9,9,68,13,8.0,25.898520084566595
+Cooper PLC,MEA,Retail,GCP,True,7,8,294.5,23,45,Quality Control,54.1,6.3,10.79,2024-07-01,10,3,95,76,6.0,19.944547134935302
+Kaufman-Bartlett,APAC,Banking,Multi-Cloud,True,3,2,393.1,4,180,Risk Assessment,90.5,17.6,4.04,2024-03-23,9,4,9,23,3.0,4.464088397790055
+Stein-Mccullough,LATAM,Insurance,AWS,True,7,3,362.0,5,120,Risk Assessment,67.4,24.7,8.13,2025-03-27,4,3,130,12,4.333333333333333,12.062314540059347
+Stevens Ltd,APAC,Insurance,Multi-Cloud,True,1,4,453.1,10,90,Document Processing,70.2,12.9,3.39,2024-06-06,8,10,92,43,5.0,4.82905982905983
+Williams Group,MEA,Telecommunications,GCP,False,3,9,28.2,6,40,Customer Churn Prediction,46.0,22.1,4.94,2025-06-02,5,1,141,6,4.333333333333333,10.73913043478261
+Gallegos-Flores,US-West,Energy,GCP,True,4,2,251.1,2,180,Fraud Detection,65.1,13.9,4.74,2024-04-13,9,9,121,22,5.0,7.281105990783411
+"Martinez, Mcclure and Chase",MEA,Technology,Multi-Cloud,True,10,5,21.4,11,72,Document Processing,43.5,8.6,9.9,2024-09-20,5,10,109,66,8.333333333333334,22.758620689655174
+Nguyen Ltd,MEA,Energy,AWS,True,1,10,120.9,15,36,Fraud Detection,67.7,12.3,7.48,2024-03-21,4,7,77,106,6.0,11.048744460856721
+Holt-Pearson,US-West,Technology,Azure,True,10,6,93.7,16,60,Fraud Detection,68.4,15.1,10.76,2024-12-27,5,7,81,53,7.666666666666667,15.730994152046781
+Hernandez Ltd,EMEA,Technology,GCP,True,7,4,197.5,7,90,Demand Forecasting,52.5,6.8,7.67,2023-11-08,3,10,129,43,7.0,14.60952380952381
+"Ruiz, Fletcher and Morse",APAC,Insurance,Multi-Cloud,True,8,3,374.7,5,120,Fraud Detection,69.2,22.9,7.53,2024-01-01,10,10,19,13,7.0,10.88150289017341
+"Martinez, Singh and Sanders",MEA,Retail,AWS,True,2,8,266.1,6,45,Risk Assessment,24.5,24.0,6.86,2024-01-16,4,10,24,108,6.666666666666667,28.000000000000004
+Johnson-Brooks,US-West,Telecommunications,Multi-Cloud,True,8,6,66.6,16,60,Demand Forecasting,68.3,17.7,10.4,2023-10-23,4,5,128,16,6.333333333333333,15.226939970717424
+"Montgomery, Aguilar and Williams",US-West,Insurance,AWS,True,1,5,384.8,9,72,Demand Forecasting,64.8,18.2,5.0,2024-05-04,10,3,131,57,3.0,7.716049382716051
+"Massey, Griffith and Vang",MEA,Manufacturing,AWS,True,6,2,397.4,5,180,Predictive Maintenance,19.7,12.1,5.01,2024-10-08,3,7,129,9,5.0,25.431472081218274
+Smith-Kramer,LATAM,Healthcare,GCP,False,7,3,44.6,8,120,Quality Control,78.8,23.1,4.11,2024-08-25,2,3,88,7,4.333333333333333,5.215736040609138
+"Mccall, Clark and Carson",APAC,Energy,Azure,True,8,3,499.1,5,120,Demand Forecasting,5.7,12.4,9.37,2025-05-07,7,5,20,15,5.333333333333333,164.38596491228068
+Martin-Ferguson,LATAM,Retail,Multi-Cloud,True,9,7,108.3,8,51,Personalization,98.5,5.7,10.66,2025-02-20,7,6,52,63,7.333333333333333,10.822335025380712
+"Frey, Henry and Swanson",APAC,Healthcare,Azure,True,1,1,354.3,2,360,Personalization,94.8,17.3,1.4,2024-07-31,3,7,41,0,3.0,1.4767932489451476
+Baker-Moody,US-West,Banking,Azure,True,6,3,254.5,5,120,Personalization,30.9,24.3,7.34,2025-04-21,1,6,60,22,5.0,23.754045307443366
+"Brown, Pearson and Delgado",APAC,Banking,Azure,True,9,5,85.6,12,72,Customer Churn Prediction,58.3,14.9,9.33,2024-05-07,7,7,15,46,7.0,16.00343053173242
+"Huerta, Watson and Barrett",EMEA,Retail,Azure,True,7,8,62.9,22,45,Predictive Maintenance,13.7,15.7,9.74,2023-08-22,5,5,44,72,6.666666666666667,71.0948905109489
+Sanchez and Sons,APAC,Banking,AWS,True,2,2,337.5,5,180,Document Processing,17.4,16.9,2.54,2023-09-27,7,10,105,28,4.666666666666667,14.597701149425287
+Thomas-Mendoza,LATAM,Manufacturing,Multi-Cloud,True,9,6,116.2,17,60,Quality Control,29.1,8.8,10.53,2023-09-05,8,5,61,31,6.666666666666667,36.18556701030927
+"Boyd, Hernandez and Beard",LATAM,Retail,GCP,True,9,4,250.9,3,90,Customer Churn Prediction,39.4,14.1,10.22,2024-11-07,6,3,108,25,5.333333333333333,25.939086294416246
+Contreras and Sons,US-East,Healthcare,AWS,False,6,8,486.3,15,45,Predictive Maintenance,85.1,13.0,8.35,2024-07-02,7,3,78,108,5.666666666666667,9.811985898942421
+Harris-Lopez,LATAM,Manufacturing,AWS,True,6,5,39.1,13,72,Demand Forecasting,92.8,16.1,6.91,2024-01-31,9,9,49,23,6.666666666666667,7.446120689655173
+Garrett-Cuevas,US-West,Insurance,AWS,True,1,4,199.3,2,90,Quality Control,22.6,23.9,4.29,2024-04-20,8,1,84,27,2.0,18.98230088495575
+"Garner, Bruce and White",APAC,Manufacturing,Multi-Cloud,True,5,1,76.6,0,360,Document Processing,59.1,8.2,4.61,2025-04-22,3,9,43,8,5.0,7.800338409475466
+Farley-Ali,APAC,Insurance,GCP,True,1,10,373.5,21,36,Risk Assessment,64.6,11.0,9.83,2024-11-28,6,2,46,20,4.333333333333333,15.21671826625387
+Blake PLC,LATAM,Technology,Multi-Cloud,False,1,6,26.4,13,60,Quality Control,64.0,20.1,3.04,2024-07-10,1,8,97,79,5.0,4.75
+"Wright, Williams and Evans",US-East,Manufacturing,Multi-Cloud,True,1,8,450.4,23,45,Quality Control,23.9,8.5,8.08,2024-02-06,5,6,20,65,5.0,33.80753138075314
+Chapman-Mccormick,Canada,Energy,Azure,False,1,3,370.0,1,120,Document Processing,59.8,10.7,1.86,2023-07-19,5,1,38,2,1.6666666666666667,3.1103678929765888
+"Thompson, Foley and Ferguson",US-West,Healthcare,GCP,False,2,10,310.1,16,36,Predictive Maintenance,43.7,17.9,6.63,2024-05-01,3,3,34,100,5.0,15.17162471395881
+"Harmon, Newman and Alexander",LATAM,Manufacturing,GCP,True,9,6,24.6,11,60,Demand Forecasting,84.3,24.4,10.7,2025-02-08,8,10,124,35,8.333333333333334,12.69276393831554
+Ray Group,MEA,Energy,Multi-Cloud,True,4,8,59.1,6,45,Predictive Maintenance,14.4,23.5,7.3,2024-03-28,6,8,16,68,6.666666666666667,50.69444444444444
+Morris LLC,MEA,Insurance,AWS,False,7,2,366.4,4,180,Fraud Detection,75.0,5.9,3.78,2023-11-13,3,3,141,23,4.0,5.04
+"Anderson, Thomas and Maddox",APAC,Technology,AWS,True,1,2,276.0,4,180,Risk Assessment,13.2,9.9,2.48,2024-10-27,3,7,133,20,3.3333333333333335,18.78787878787879
+"Mccann, Hernandez and Clark",US-West,Retail,AWS,True,10,2,39.2,4,180,Personalization,67.8,7.5,8.4,2023-12-08,3,1,29,29,4.333333333333333,12.389380530973453
+Case-Monroe,US-West,Manufacturing,GCP,True,6,10,434.6,23,36,Demand Forecasting,38.4,9.4,12.26,2024-12-03,10,3,145,147,6.333333333333333,31.927083333333332
+Bennett-Clements,US-East,Retail,Azure,True,1,9,9.7,17,40,Risk Assessment,60.4,23.1,6.97,2024-03-31,2,1,60,126,3.6666666666666665,11.539735099337749
+"Harris, Price and Larsen",EMEA,Retail,Azure,False,1,9,86.1,25,40,Fraud Detection,41.8,7.3,5.24,2024-09-25,9,9,44,71,6.333333333333333,12.535885167464118
+Reese-Walsh,Canada,Technology,Multi-Cloud,True,4,7,14.5,5,51,Predictive Maintenance,77.5,5.2,7.47,2024-09-29,6,6,55,16,5.666666666666667,9.638709677419355
+Edwards-Wright,US-East,Energy,AWS,True,7,6,210.2,7,60,Document Processing,16.8,15.6,7.97,2023-11-19,8,2,131,51,5.0,47.44047619047619
+Lopez-Ellis,US-West,Retail,Multi-Cloud,True,9,8,289.5,23,45,Document Processing,14.3,23.5,13.22,2024-04-30,3,3,29,17,6.666666666666667,92.44755244755245
+Smith-Cisneros,US-East,Energy,Multi-Cloud,True,4,7,484.4,18,51,Demand Forecasting,89.6,17.9,9.18,2024-05-20,10,3,69,37,4.666666666666667,10.245535714285714
+Kim-Lucas,LATAM,Energy,GCP,False,8,3,30.3,8,120,Demand Forecasting,39.1,14.8,6.24,2023-12-29,8,8,136,45,6.333333333333333,15.959079283887467
+Shaw-Miller,US-East,Technology,Multi-Cloud,True,5,8,288.8,20,45,Fraud Detection,11.5,21.9,11.51,2023-10-14,6,1,16,57,4.666666666666667,100.08695652173914
+"Kelly, Lutz and Owens",APAC,Retail,Multi-Cloud,False,6,4,439.4,4,90,Document Processing,54.4,19.7,4.92,2024-07-18,2,6,115,42,5.333333333333333,9.044117647058822
+"White, Knapp and Nelson",EMEA,Insurance,Azure,True,5,7,141.5,7,51,Fraud Detection,7.9,9.0,10.22,2023-10-05,8,7,81,78,6.333333333333333,129.36708860759495
+Garcia Inc,Canada,Energy,Azure,False,8,3,494.1,4,120,Quality Control,17.5,23.1,6.15,2024-05-29,2,9,64,31,6.666666666666667,35.14285714285714
+Adams-Berry,US-East,Energy,Multi-Cloud,True,3,7,452.0,15,51,Customer Churn Prediction,83.5,21.6,8.87,2024-02-09,4,4,89,16,4.666666666666667,10.622754491017963
+Rios-Brown,US-West,Healthcare,AWS,False,7,1,242.2,1,360,Quality Control,45.4,5.3,3.26,2023-11-13,10,9,138,3,5.666666666666667,7.180616740088105
+Hernandez-Olsen,US-West,Energy,Multi-Cloud,True,9,10,270.6,13,36,Document Processing,19.5,9.2,15.52,2025-02-07,3,1,86,122,6.666666666666667,79.58974358974359
+Levy and Sons,APAC,Technology,Azure,False,4,1,429.8,0,360,Quality Control,26.2,10.7,2.08,2024-10-13,9,10,81,1,5.0,7.938931297709924
+"Taylor, Wright and Young",LATAM,Technology,GCP,False,3,10,399.1,29,36,Quality Control,11.7,9.0,5.47,2023-09-12,6,7,115,68,6.666666666666667,46.75213675213675
+Taylor-Cooper,Canada,Retail,Multi-Cloud,False,2,8,416.4,6,45,Customer Churn Prediction,27.3,16.8,5.2,2024-10-08,10,7,84,108,5.666666666666667,19.047619047619047
+"Burnett, Beasley and Sanchez",MEA,Banking,GCP,True,3,2,61.7,3,180,Quality Control,41.0,21.4,4.19,2024-04-19,7,9,123,7,4.666666666666667,10.219512195121952
+"Brooks, Harris and Downs",MEA,Energy,GCP,True,4,7,185.3,4,51,Demand Forecasting,5.0,6.3,8.25,2025-06-10,3,5,138,42,5.333333333333333,165.0
+"Douglas, Waters and Dalton",Canada,Technology,Multi-Cloud,False,1,7,459.0,9,51,Fraud Detection,91.9,23.7,3.48,2023-12-10,8,6,32,93,4.666666666666667,3.786724700761697
+Campbell-Burton,US-East,Technology,Azure,True,7,8,43.3,12,45,Risk Assessment,13.2,14.0,11.62,2023-09-17,8,7,44,64,7.333333333333333,88.03030303030303
+Carter-Bell,US-East,Telecommunications,Multi-Cloud,False,1,7,272.3,15,51,Personalization,54.8,12.9,4.05,2024-07-09,9,9,44,72,5.666666666666667,7.39051094890511
+Parker Group,APAC,Insurance,Azure,True,10,8,365.6,10,45,Demand Forecasting,45.0,11.2,15.93,2024-07-01,2,9,82,108,9.0,35.4
+Hall-Brown,APAC,Manufacturing,Azure,True,1,9,63.6,23,40,Customer Churn Prediction,35.7,19.3,7.48,2024-05-04,3,7,128,90,5.666666666666667,20.952380952380953
+Parsons-Lutz,LATAM,Retail,Azure,True,7,1,106.7,2,360,Fraud Detection,70.5,19.7,6.86,2024-08-01,2,4,64,13,4.0,9.73049645390071
+"Hendricks, Nicholson and Huang",MEA,Telecommunications,GCP,True,9,2,453.9,2,180,Quality Control,78.2,17.8,9.09,2024-01-07,3,8,54,9,6.333333333333333,11.624040920716112
+Warren Inc,US-West,Healthcare,AWS,False,4,5,394.2,3,72,Predictive Maintenance,66.2,11.0,4.27,2023-12-08,10,7,23,14,5.333333333333333,6.450151057401812
+Holden LLC,LATAM,Energy,Multi-Cloud,True,7,3,493.9,6,120,Predictive Maintenance,46.4,10.8,6.17,2025-04-22,8,8,100,30,6.0,13.297413793103448
+Garrett-Little,LATAM,Energy,Azure,True,10,10,423.5,28,36,Predictive Maintenance,6.9,17.7,16.44,2024-03-13,5,1,21,77,7.0,238.2608695652174
+Brewer LLC,LATAM,Healthcare,GCP,True,10,2,86.5,5,180,Predictive Maintenance,51.8,18.5,9.94,2024-10-12,1,9,27,19,7.0,19.18918918918919
+Martin Inc,US-East,Energy,AWS,True,4,9,222.0,19,40,Quality Control,87.2,23.6,10.87,2023-06-30,8,8,79,12,7.0,12.465596330275227
+"Ortega, Barker and Marquez",Canada,Manufacturing,AWS,False,1,2,476.6,5,180,Risk Assessment,29.7,7.3,1.27,2024-07-19,5,2,116,22,1.6666666666666667,4.276094276094276
+Myers Inc,EMEA,Telecommunications,GCP,False,4,5,131.1,8,72,Fraud Detection,95.3,12.0,4.17,2024-07-03,3,3,81,44,4.0,4.3756558237145855
+Gates-Robinson,US-East,Retail,Azure,True,2,7,318.6,18,51,Risk Assessment,10.1,12.7,7.75,2024-01-03,10,7,105,104,5.333333333333333,76.73267326732673
+Barnes-Bowen,EMEA,Energy,Multi-Cloud,True,10,8,249.7,23,45,Demand Forecasting,31.6,24.1,12.39,2024-11-27,10,6,44,11,8.0,39.20886075949367
+Rivers-Rodriguez,APAC,Telecommunications,Multi-Cloud,False,10,8,131.1,19,45,Quality Control,90.7,6.2,9.22,2024-03-25,6,7,99,33,8.333333333333334,10.165380374862183
+Sanders Ltd,US-East,Insurance,Multi-Cloud,True,5,4,488.6,2,90,Risk Assessment,89.7,20.4,6.8,2023-10-04,5,3,113,31,4.0,7.58082497212932
+"Mckay, Jimenez and Johnson",US-West,Insurance,Azure,False,6,9,75.3,22,40,Customer Churn Prediction,19.8,11.5,8.11,2023-07-15,9,3,89,27,6.0,40.95959595959596
+"Ramirez, Smith and Smith",MEA,Manufacturing,AWS,True,8,5,176.7,14,72,Quality Control,43.7,9.4,7.96,2023-12-30,6,1,44,62,4.666666666666667,18.215102974828373
+Johnson Group,EMEA,Technology,AWS,True,2,10,313.7,5,36,Demand Forecasting,79.4,19.2,8.87,2023-12-06,9,9,148,66,7.0,11.171284634760703
+Mcknight-Jimenez,US-East,Manufacturing,AWS,True,9,7,360.9,14,51,Quality Control,25.4,18.6,12.63,2023-11-26,3,7,85,100,7.666666666666667,49.7244094488189
+"Lee, Garcia and Jones",LATAM,Retail,Azure,True,9,1,139.4,2,360,Document Processing,74.1,13.8,6.11,2023-10-16,7,1,39,1,3.6666666666666665,8.24561403508772
+"Mccoy, Kelley and Green",LATAM,Insurance,Multi-Cloud,True,3,3,203.4,5,120,Fraud Detection,54.2,18.7,4.13,2024-12-11,8,2,146,36,2.6666666666666665,7.619926199261992
+Brooks Group,US-East,Energy,Multi-Cloud,False,9,10,496.3,28,36,Quality Control,57.6,24.4,10.74,2024-06-03,5,3,134,25,7.333333333333333,18.645833333333332
+Strickland-Jackson,MEA,Manufacturing,AWS,False,4,10,401.7,15,36,Demand Forecasting,91.4,23.4,6.26,2023-07-23,5,9,84,43,7.666666666666667,6.849015317286651
+Martinez LLC,APAC,Banking,AWS,True,3,10,478.7,26,36,Demand Forecasting,84.5,23.7,11.3,2024-01-27,1,5,53,121,6.0,13.372781065088757
+Evans Inc,EMEA,Energy,Multi-Cloud,True,3,4,63.7,10,90,Fraud Detection,31.3,5.0,4.51,2024-07-16,3,10,10,50,5.666666666666667,14.408945686900957
+Cooper-Burke,Canada,Healthcare,AWS,True,7,1,256.1,0,360,Document Processing,35.3,8.4,6.01,2024-05-13,8,6,86,2,4.666666666666667,17.025495750708217
+Miller LLC,LATAM,Manufacturing,GCP,True,6,8,264.6,19,45,Risk Assessment,54.0,18.1,9.88,2023-12-29,8,6,147,93,6.666666666666667,18.296296296296298
+"Baker, Moran and Leonard",US-West,Telecommunications,Multi-Cloud,True,6,6,430.6,13,60,Fraud Detection,70.0,14.4,10.4,2023-08-07,1,9,26,19,7.0,14.857142857142858
+Moore-Allen,APAC,Telecommunications,GCP,True,5,6,162.7,4,60,Risk Assessment,67.2,22.2,8.96,2024-11-04,1,8,137,47,6.333333333333333,13.333333333333334
+Erickson-Washington,US-West,Insurance,AWS,False,6,1,398.9,2,360,Demand Forecasting,72.3,6.9,4.1,2024-02-18,2,7,69,11,4.666666666666667,5.670816044260028
+Yang Group,US-West,Technology,Azure,True,8,3,114.2,2,120,Risk Assessment,12.1,19.5,7.28,2024-05-14,3,10,30,43,7.0,60.16528925619835
+"Morris, Joseph and Hampton",US-West,Energy,Multi-Cloud,True,6,4,427.9,8,90,Risk Assessment,10.3,22.7,6.43,2024-09-19,8,1,69,55,3.6666666666666665,62.42718446601941
+"Howard, Clayton and Schultz",US-East,Retail,Multi-Cloud,False,6,1,415.1,2,360,Customer Churn Prediction,13.2,12.8,3.7,2024-02-22,7,3,6,0,3.3333333333333335,28.030303030303035
+Hernandez-Calhoun,Canada,Manufacturing,Multi-Cloud,True,4,4,323.8,7,90,Fraud Detection,66.6,10.7,6.05,2024-08-24,6,9,119,45,5.666666666666667,9.084084084084084
+Allen PLC,MEA,Telecommunications,GCP,False,9,3,61.1,5,120,Quality Control,83.8,18.3,5.65,2024-11-21,4,3,21,27,5.0,6.742243436754178
