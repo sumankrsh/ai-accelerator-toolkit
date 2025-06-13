@@ -6,9 +6,6 @@ from datetime import datetime
 import os
 import io
 import base64
-from reportlab.lib.pagesizes import letter
-from reportlab.pdfgen import canvas
-from reportlab.lib import colors
 
 # Page configuration
 st.set_page_config(
@@ -19,168 +16,51 @@ st.set_page_config(
 )
 
 # Helper functions for PDF generation
-def generate_mlops_checklist_pdf():
-    """Generate MLOps Checklist PDF"""
-    buffer = io.BytesIO()
-    c = canvas.Canvas(buffer, pagesize=letter)
-    width, height = letter
-    
-    # Title
-    c.setFont("Helvetica-Bold", 24)
-    c.drawCentredString(width/2, height-50, "MLOps Implementation Checklist")
-    
-    # Content
-    y = height - 100
-    categories = [
-        ("Data Pipeline", [
-            "Data versioning system implemented",
-            "Automated data quality checks",
-            "Feature store established"
-        ]),
-        ("Model Development", [
-            "Experiment tracking system",
-            "Model registry configured",
-            "Automated hyperparameter tuning"
-        ]),
-        ("Deployment", [
-            "CI/CD pipeline established",
-            "A/B testing framework",
-            "Model drift detection"
-        ])
-    ]
-    
-    c.setFont("Helvetica-Bold", 14)
-    for category, items in categories:
-        c.drawString(50, y, category)
-        y -= 25
-        
-        c.setFont("Helvetica", 11)
-        for item in items:
-            c.drawString(70, y, f"□ {item}")
-            y -= 20
-        y -= 10
-    
-    c.save()
-    buffer.seek(0)
-    return buffer
-
-def generate_roi_template_pdf():
-    """Generate ROI Template PDF"""
-    buffer = io.BytesIO()
-    c = canvas.Canvas(buffer, pagesize=letter)
-    width, height = letter
-    
-    c.setFont("Helvetica-Bold", 24)
-    c.drawCentredString(width/2, height-50, "AI ROI Calculation Template")
-    
-    y = height - 100
-    sections = [
-        "1. Cost Savings",
-        "   - Labor cost reduction: $_______",
-        "   - Process automation savings: $_______",
-        "",
-        "2. Revenue Generation",
-        "   - New revenue streams: $_______",
-        "   - Customer retention value: $_______",
-        "",
-        "3. Implementation Costs",
-        "   - Initial development: $_______",
-        "   - Annual operations: $_______",
-        "",
-        "4. ROI Calculation",
-        "   - Total Benefits: $_______",
-        "   - Total Costs: $_______",
-        "   - ROI Percentage: _____%"
-    ]
-    
-    c.setFont("Helvetica", 12)
-    for line in sections:
-        c.drawString(50, y, line)
-        y -= 20
-    
-    c.save()
-    buffer.seek(0)
-    return buffer
-
-def generate_architecture_pdf(industry, cloud_provider, use_case):
-    """Generate Architecture Blueprint PDF"""
-    buffer = io.BytesIO()
-    c = canvas.Canvas(buffer, pagesize=letter)
-    width, height = letter
-    
-    c.setFont("Helvetica-Bold", 20)
-    c.drawCentredString(width/2, height-50, f"{industry} AI Architecture Blueprint")
-    
-    c.setFont("Helvetica", 14)
-    c.drawCentredString(width/2, height-75, f"{cloud_provider} | {use_case}")
-    
-    y = height - 120
-    c.setFont("Helvetica-Bold", 14)
-    c.drawString(50, y, "Architecture Components:")
-    
-    y -= 30
-    components = [
-        "1. Data Layer",
-        f"   - Storage: {cloud_provider} Data Lake",
-        "   - Processing: Distributed compute",
-        "",
-        "2. ML Platform",
-        "   - Training: GPU-enabled compute",
-        "   - Registry: Model versioning",
-        "",
-        "3. Serving Layer",
-        "   - API Gateway: REST endpoints",
-        "   - Monitoring: Real-time metrics",
-        "",
-        "4. Estimated Cost",
-        "   - Development: $5,000-$8,000/month",
-        "   - Production: $15,000-$25,000/month"
-    ]
-    
-    c.setFont("Helvetica", 11)
-    for line in components:
-        c.drawString(50, y, line)
-        y -= 18
-    
-    c.save()
-    buffer.seek(0)
-    return buffer
-
-# Load data
-@st.cache_data
-def load_data():
-    if os.path.exists('dummy_enterprise_data.csv'):
-        df = pd.read_csv('dummy_enterprise_data.csv')
-        df['Implementation_Date'] = pd.to_datetime(df['Implementation_Date'])
-        return df
-    else:
-        # Generate sample data if file doesn't exist
-        import random
-        data = []
-        regions = ['US-East', 'US-West', 'EMEA', 'APAC', 'LATAM']
-        industries = ['Insurance', 'Healthcare', 'Retail', 'Banking']
-        
-        for i in range(350):
-            data.append({
-                'Business_Unit': f'Unit_{i}',
-                'Region': random.choice(regions),
-                'Industry': random.choice(industries),
-                'Cloud_Ready': random.choice([True, False]),
-                'Data_Maturity_Score': random.randint(1, 10),
-                'ML_Ops_Maturity_Score': random.randint(1, 10),
-                'Data_Governance_Score': random.randint(1, 10),
-                'Overall_Readiness_Score': round(random.uniform(1, 10), 1),
-                'Estimated_AI_ROI_MillionUSD': round(random.uniform(1, 10), 2),
-                'Models_In_Production': random.randint(0, 50),
-                'Time_To_Market_Days': random.randint(30, 180),
-                'AI_Investment_Percentage': random.uniform(5, 25),
-                'Cloud_Provider': random.choice(['Azure', 'AWS', 'GCP'])
-            })
-        return pd.DataFrame(data)
+def generate_pdf_download_link(content, filename, link_text):
+    """Generate a download link for text content as PDF"""
+    b64 = base64.b64encode(content.encode()).decode()
+    href = f'<a href="data:text/plain;base64,{b64}" download="{filename}">{link_text}</a>'
+    return href
 
 # Initialize session state
 if 'generated_blueprint' not in st.session_state:
     st.session_state.generated_blueprint = False
+
+# Load data with error handling
+@st.cache_data
+def load_data():
+    try:
+        if os.path.exists('dummy_enterprise_data.csv'):
+            df = pd.read_csv('dummy_enterprise_data.csv')
+            df['Implementation_Date'] = pd.to_datetime(df['Implementation_Date'])
+            return df
+    except Exception as e:
+        st.warning(f"Could not load data file: {e}")
+    
+    # Generate sample data if file doesn't exist
+    import random
+    data = []
+    regions = ['US-East', 'US-West', 'EMEA', 'APAC', 'LATAM']
+    industries = ['Insurance', 'Healthcare', 'Retail', 'Banking']
+    
+    for i in range(350):
+        data.append({
+            'Business_Unit': f'Unit_{i}',
+            'Region': random.choice(regions),
+            'Industry': random.choice(industries),
+            'Cloud_Ready': random.choice([True, False]),
+            'Data_Maturity_Score': random.randint(1, 10),
+            'ML_Ops_Maturity_Score': random.randint(1, 10),
+            'Data_Governance_Score': random.randint(1, 10),
+            'Overall_Readiness_Score': round(random.uniform(1, 10), 1),
+            'Estimated_AI_ROI_MillionUSD': round(random.uniform(1, 10), 2),
+            'Models_In_Production': random.randint(0, 50),
+            'Time_To_Market_Days': random.randint(30, 180),
+            'AI_Investment_Percentage': random.uniform(5, 25),
+            'Cloud_Provider': random.choice(['Azure', 'AWS', 'GCP']),
+            'Implementation_Date': pd.Timestamp('2023-01-01') + pd.Timedelta(days=random.randint(0, 365))
+        })
+    return pd.DataFrame(data)
 
 # Load data
 df = load_data()
@@ -189,37 +69,31 @@ df = load_data()
 st.markdown("""
 <style>
     .main-header {
-        font-size: 3.5rem;
+        font-size: 3rem;
         font-weight: bold;
         color: #1E88E5;
         text-align: center;
-        padding: 2rem 0;
+        padding: 1rem 0;
     }
     .sub-header {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         color: #666;
         text-align: center;
         margin-bottom: 2rem;
     }
-    div[data-testid="metric-container"] {
+    .metric-card {
         background-color: #f0f2f6;
-        border: 1px solid #ddd;
-        padding: 1rem;
         border-radius: 10px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    .stButton > button {
-        background-color: #1E88E5;
-        color: white;
-        font-weight: bold;
-    }
-    .success-box {
-        background-color: #d4edda;
-        border: 1px solid #c3e6cb;
-        color: #155724;
         padding: 1rem;
+    }
+    .download-button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 0.5rem 1rem;
+        text-decoration: none;
         border-radius: 5px;
-        margin: 1rem 0;
+        display: inline-block;
+        margin: 0.5rem 0;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -243,32 +117,41 @@ with st.sidebar:
     
     selected_regions = st.multiselect(
         "Select Regions",
-        options=df['Region'].unique(),
-        default=df['Region'].unique()
+        options=df['Region'].unique() if not df.empty else [],
+        default=df['Region'].unique() if not df.empty else []
     )
     
     selected_industries = st.multiselect(
         "Select Industries",
-        options=df['Industry'].unique(),
-        default=df['Industry'].unique()[:3]
+        options=df['Industry'].unique() if not df.empty else [],
+        default=df['Industry'].unique()[:3] if not df.empty else []
     )
     
     # Filter data
-    filtered_df = df[
-        (df['Region'].isin(selected_regions)) &
-        (df['Industry'].isin(selected_industries))
-    ]
+    if selected_regions and selected_industries:
+        filtered_df = df[
+            (df['Region'].isin(selected_regions)) &
+            (df['Industry'].isin(selected_industries))
+        ]
+    else:
+        filtered_df = df
     
     st.markdown("---")
     
     st.markdown("### 📊 Quick Stats")
-    st.metric("Total Units", len(filtered_df))
-    st.metric("Avg Readiness", f"{filtered_df['Overall_Readiness_Score'].mean():.1f}/10")
-    st.metric("Total ROI", f"${filtered_df['Estimated_AI_ROI_MillionUSD'].sum():.1f}M")
+    if not filtered_df.empty:
+        st.metric("Total Units", len(filtered_df))
+        st.metric("Avg Readiness", f"{filtered_df['Overall_Readiness_Score'].mean():.1f}/10")
+        st.metric("Total ROI", f"${filtered_df['Estimated_AI_ROI_MillionUSD'].sum():.1f}M")
 
 # Main content
 st.markdown('<h1 class="main-header">🚀 AI Accelerator Toolkit</h1>', unsafe_allow_html=True)
 st.markdown('<p class="sub-header">Enterprise AI Transformation Platform | $45M+ Proven Impact</p>', unsafe_allow_html=True)
+
+# Error handling for empty dataframe
+if filtered_df.empty:
+    st.warning("No data available. Using sample data for demonstration.")
+    filtered_df = df
 
 # Top KPI Metrics
 col1, col2, col3, col4, col5 = st.columns(5)
@@ -277,19 +160,19 @@ with col1:
     st.metric("Business Units", len(filtered_df), f"+{int(len(filtered_df)*0.15)}")
 
 with col2:
-    avg_roi = filtered_df['Estimated_AI_ROI_MillionUSD'].mean()
+    avg_roi = filtered_df['Estimated_AI_ROI_MillionUSD'].mean() if not filtered_df.empty else 5.5
     st.metric("Avg ROI", f"${avg_roi:.1f}M", "+23%")
 
 with col3:
-    cloud_ready = len(filtered_df[filtered_df['Cloud_Ready']]) / len(filtered_df) * 100
-    st.metric("Cloud Ready", f"{cloud_ready:.0f}%", "+12%")
+    cloud_ready_pct = (len(filtered_df[filtered_df['Cloud_Ready']]) / len(filtered_df) * 100) if not filtered_df.empty else 72
+    st.metric("Cloud Ready", f"{cloud_ready_pct:.0f}%", "+12%")
 
 with col4:
-    total_models = filtered_df['Models_In_Production'].sum()
+    total_models = filtered_df['Models_In_Production'].sum() if not filtered_df.empty else 3247
     st.metric("Models in Prod", f"{total_models:,}", "+45")
 
 with col5:
-    avg_time = filtered_df['Time_To_Market_Days'].mean()
+    avg_time = filtered_df['Time_To_Market_Days'].mean() if not filtered_df.empty else 90
     st.metric("Avg Time to Market", f"{avg_time:.0f}d", "-30d")
 
 st.markdown("---")
@@ -305,47 +188,56 @@ tab1, tab2, tab3, tab4 = st.tabs([
 with tab1:
     st.header("Enterprise AI Readiness Assessment")
     
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        st.subheader("🌍 Global Readiness Heatmap")
+    if not filtered_df.empty:
+        col1, col2 = st.columns(2)
         
-        pivot_data = filtered_df.pivot_table(
-            values='Overall_Readiness_Score',
-            index='Industry',
-            columns='Region',
-            aggfunc='mean'
-        ).round(1)
+        with col1:
+            st.subheader("🌍 Global Readiness Heatmap")
+            
+            try:
+                pivot_data = filtered_df.pivot_table(
+                    values='Overall_Readiness_Score',
+                    index='Industry',
+                    columns='Region',
+                    aggfunc='mean'
+                ).round(1)
+                
+                fig = px.imshow(
+                    pivot_data,
+                    labels=dict(x="Region", y="Industry", color="Readiness Score"),
+                    color_continuous_scale="RdBu",
+                    title="AI Readiness by Industry and Region"
+                )
+                st.plotly_chart(fig, use_container_width=True)
+            except:
+                st.info("Insufficient data for heatmap visualization")
         
-        fig = px.imshow(
-            pivot_data,
-            labels=dict(x="Region", y="Industry", color="Readiness Score"),
-            color_continuous_scale="RdBu",
-            title="AI Readiness by Industry and Region"
-        )
-        st.plotly_chart(fig, use_container_width=True)
-    
-    with col2:
-        st.subheader("📈 Maturity Score Distribution")
+        with col2:
+            st.subheader("📈 Maturity Score Distribution")
+            
+            try:
+                fig = go.Figure()
+                fig.add_trace(go.Box(y=filtered_df['Data_Maturity_Score'], name='Data Maturity'))
+                fig.add_trace(go.Box(y=filtered_df['ML_Ops_Maturity_Score'], name='MLOps Maturity'))
+                fig.add_trace(go.Box(y=filtered_df['Data_Governance_Score'], name='Governance'))
+                
+                fig.update_layout(title="Maturity Score Components", showlegend=False)
+                st.plotly_chart(fig, use_container_width=True)
+            except:
+                st.info("Unable to display maturity scores")
         
-        fig = go.Figure()
-        fig.add_trace(go.Box(y=filtered_df['Data_Maturity_Score'], name='Data Maturity'))
-        fig.add_trace(go.Box(y=filtered_df['ML_Ops_Maturity_Score'], name='MLOps Maturity'))
-        fig.add_trace(go.Box(y=filtered_df['Data_Governance_Score'], name='Governance'))
+        # Key insights
+        st.subheader("🔍 Key Insights")
         
-        fig.update_layout(title="Maturity Score Components", showlegend=False)
-        st.plotly_chart(fig, use_container_width=True)
-    
-    # Key insights
-    st.subheader("🔍 Key Insights")
-    
-    avg_readiness = filtered_df['Overall_Readiness_Score'].mean()
-    if avg_readiness < 5:
-        st.warning("**Low Readiness**: Focus on foundational capabilities before advanced AI initiatives.")
-    elif avg_readiness < 7:
-        st.info("**Moderate Readiness**: Ready for targeted AI initiatives with proper planning.")
+        avg_readiness = filtered_df['Overall_Readiness_Score'].mean()
+        if avg_readiness < 5:
+            st.warning("**Low Readiness**: Focus on foundational capabilities before advanced AI initiatives.")
+        elif avg_readiness < 7:
+            st.info("**Moderate Readiness**: Ready for targeted AI initiatives with proper planning.")
+        else:
+            st.success("**High Readiness**: Prepared for enterprise-wide AI transformation.")
     else:
-        st.success("**High Readiness**: Prepared for enterprise-wide AI transformation.")
+        st.info("No data available for visualization")
 
 with tab2:
     st.header("AI Architecture Blueprint Generator")
@@ -407,15 +299,47 @@ with tab2:
             - **Total Annual Estimate:** $240,000 - $396,000
             """)
             
-            # Generate PDF
-            blueprint_pdf = generate_architecture_pdf(selected_industry, selected_cloud, selected_use_case)
+            # Generate blueprint content
+            blueprint_content = f"""
+{selected_industry} AI Architecture Blueprint
+==========================================
+
+Cloud Provider: {selected_cloud}
+Use Case: {selected_use_case}
+
+Architecture Components:
+-----------------------
+1. Data Layer
+   - Storage: {selected_cloud} Data Lake
+   - Processing: Distributed compute
+   - Governance: Data catalog and lineage
+
+2. ML Platform
+   - Training: GPU-enabled compute
+   - Registry: Model versioning
+   - Monitoring: Drift detection
+
+3. Serving Layer
+   - API Gateway: REST endpoints
+   - Monitoring: Real-time metrics
+   - Scaling: Auto-scaling enabled
+
+Cost Estimate:
+--------------
+- Development: $5,000-$8,000/month
+- Production: $15,000-$25,000/month
+- Annual Total: $240,000-$396,000
+
+Generated by AI Accelerator Toolkit
+© 2024 Suman Mukherjee
+            """
             
+            # Download button
             st.download_button(
-                label="📥 Download Architecture Blueprint (PDF)",
-                data=blueprint_pdf,
-                file_name=f"{selected_industry}_{selected_cloud}_Architecture.pdf",
-                mime="application/pdf",
-                type="primary"
+                label="📥 Download Architecture Blueprint (TXT)",
+                data=blueprint_content,
+                file_name=f"{selected_industry}_{selected_cloud}_Architecture.txt",
+                mime="text/plain"
             )
             
             st.success("✅ Blueprint generated successfully!")
@@ -425,7 +349,6 @@ with tab2:
 with tab3:
     st.header("ROI Estimation & Business Case Builder")
     
-    # ROI Calculator
     st.subheader("🧮 Custom ROI Calculator")
     
     col1, col2, col3 = st.columns(3)
@@ -457,7 +380,7 @@ with tab3:
         total_3year_benefit = total_annual_benefit * 2.3  # Accounting for ramp-up
         total_3year_cost = (implementation_cost * 1000) + (annual_operating_cost * 1000 * 3)
         net_benefit = total_3year_benefit - total_3year_cost
-        roi_percentage = (net_benefit / total_3year_cost) * 100
+        roi_percentage = (net_benefit / total_3year_cost) * 100 if total_3year_cost > 0 else 0
         
         # Display results
         st.markdown("---")
@@ -472,18 +395,48 @@ with tab3:
         with col3:
             st.metric("ROI Percentage", f"{roi_percentage:.0f}%")
         with col4:
-            st.metric("Payback Period", f"{int(total_3year_cost/total_annual_benefit*12)} months")
+            payback = int(total_3year_cost/total_annual_benefit*12) if total_annual_benefit > 0 else 999
+            st.metric("Payback Period", f"{payback} months")
         
-        st.success(f"✅ {'Proceed with implementation' if roi_percentage > 100 else 'Review parameters'}")
+        if roi_percentage > 100:
+            st.success("✅ Strong business case - Proceed with implementation")
+        else:
+            st.warning("⚠️ Review parameters for better ROI")
     
-    # Download ROI template
-    st.markdown("---")
-    roi_template = generate_roi_template_pdf()
+    # ROI Template
+    roi_template = """
+AI ROI Calculation Template
+==========================
+
+1. Cost Savings
+   - Labor cost reduction: $_______
+   - Process automation savings: $_______
+   - Error reduction value: $_______
+
+2. Revenue Generation
+   - New revenue streams: $_______
+   - Customer retention value: $_______
+   - Market expansion: $_______
+
+3. Implementation Costs
+   - Initial development: $_______
+   - Annual operations: $_______
+   - Training costs: $_______
+
+4. ROI Calculation
+   - Total Benefits: $_______
+   - Total Costs: $_______
+   - ROI Percentage: _____%
+   - Payback Period: _____ months
+
+Generated by AI Accelerator Toolkit
+    """
+    
     st.download_button(
-        label="📥 Download ROI Template (PDF)",
+        label="📥 Download ROI Template (TXT)",
         data=roi_template,
-        file_name="AI_ROI_Template.pdf",
-        mime="application/pdf"
+        file_name="AI_ROI_Template.txt",
+        mime="text/plain"
     )
 
 with tab4:
@@ -511,6 +464,7 @@ ai-project/
         - ✅ Model Registry
         - ✅ Monitoring
         - ✅ Documentation
+        - ✅ Security First
         """)
     
     with col3:
@@ -521,33 +475,54 @@ ai-project/
         - **Registry:** MLflow
         - **Monitoring:** Evidently
         - **Feature Store:** Feast
+        - **Validation:** Great Expectations
         """)
     
-    # Downloadable resources
-    st.markdown("---")
-    st.markdown("### 📥 Downloadable Resources")
+    # MLOps Checklist
+    mlops_checklist = """
+MLOps Implementation Checklist
+==============================
+
+Data Pipeline:
+□ Data versioning system implemented
+□ Automated data quality checks
+□ Feature store established
+□ Data lineage tracking
+
+Model Development:
+□ Experiment tracking system
+□ Model registry configured
+□ Automated hyperparameter tuning
+□ Version control for code
+
+Deployment:
+□ CI/CD pipeline established
+□ A/B testing framework
+□ Model drift detection
+□ Rollback procedures
+
+Governance:
+□ Model documentation
+□ Approval workflows
+□ Audit trails
+□ Compliance checks
+
+Generated by AI Accelerator Toolkit
+© 2024 Suman Mukherjee
+    """
     
-    col1, col2, col3 = st.columns(3)
-    
-    with col1:
-        mlops_checklist = generate_mlops_checklist_pdf()
-        st.download_button(
-            label="📋 MLOps Checklist (PDF)",
-            data=mlops_checklist,
-            file_name="MLOps_Checklist.pdf",
-            mime="application/pdf"
-        )
-    
-    with col2:
-        st.button("🏗️ Architecture Templates", disabled=True, help="Coming soon")
-    
-    with col3:
-        st.button("📚 Best Practices Guide", disabled=True, help="Coming soon")
+    st.download_button(
+        label="📋 Download MLOps Checklist (TXT)",
+        data=mlops_checklist,
+        file_name="MLOps_Checklist.txt",
+        mime="text/plain"
+    )
 
 # Footer
 st.markdown("---")
 st.markdown("""
 <div style='text-align: center; color: #666; padding: 2rem 0;'>
     <p>🚀 AI Accelerator Toolkit v2.0 | Built by Suman Mukherjee | © 2024</p>
+    <p>📧 smn.mukherjee@gmail.com | 🌐 www.mukherjeesuman.com</p>
 </div>
 """, unsafe_allow_html=True)
