@@ -11,7 +11,7 @@ NC='\033[0m' # No Color
 echo -e "\n${YELLOW}Step 1: Create a new repository on GitHub${NC}"
 echo "1. Go to: https://github.com/new"
 echo "2. Repository name: ai-accelerator-toolkit"
-echo "3. Description: Enterprise AI Transformation Platform - $45M+ ROI Impact"
+echo "3. Description: Streamlit demo for planning enterprise AI programmes, on synthetic data"
 echo "4. Make it PUBLIC (required for free hosting)"
 echo "5. DON'T initialize with README"
 echo "6. Click 'Create repository'"
