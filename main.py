@@ -146,7 +146,7 @@ with st.sidebar:
 
 # Main content
 st.markdown('<h1 class="main-header">🚀 AI Accelerator Toolkit</h1>', unsafe_allow_html=True)
-st.markdown('<p class="sub-header">Enterprise AI Transformation Platform | $45M+ Proven Impact</p>', unsafe_allow_html=True)
+st.markdown('<p class="sub-header">Enterprise AI Transformation Platform | Demo on synthetic data</p>', unsafe_allow_html=True)
 
 # Error handling for empty dataframe
 if filtered_df.empty:
