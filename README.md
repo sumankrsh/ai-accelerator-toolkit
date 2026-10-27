@@ -1,207 +1,82 @@
-# 🚀 Global AI-Accelerator Toolkit
+# AI-Accelerator Toolkit
 
-An enterprise-grade AI transformation platform that provides comprehensive tools for assessing AI readiness, generating cloud architectures, and calculating ROI across global business units.
+A Streamlit app for planning an enterprise AI programme: how ready each business unit is, what a reference cloud architecture could look like, what the ROI case might be, and how to get started with MLOps and GenAI Ops.
 
-## 🆕 Latest Update: GenAI Edition
-Now includes an advanced GenAI Edition with:
-- 🎮 Interactive AI Playground with multi-model support
-- 📄 Document Q&A system
-- 📊 Real-time analytics and token tracking
-- 🤖 GenAI Ops toolkit
-- 💰 Enhanced ROI calculator for LLM implementations
+I built it as a demo of the planning tools that help when an AI programme spans many teams and regions.
 
-![AI Accelerator](https://via.placeholder.com/800x200/1E88E5/FFFFFF?text=Global+AI+Accelerator+Toolkit)
+> **Demo data only.** Everything the app shows is synthetic. The 350 business units in `dummy_enterprise_data.csv` are generated with Faker by `generate_dummy_data.py`, and the GenAI playground and document Q&A return simulated answers instead of calling a model. None of the figures in the app are real results.
 
-## 🎯 Overview
+## What's in it
 
-This toolkit demonstrates leadership in enterprise AI transformation, showcasing:
-- **$45M+ realized ROI** across 350+ business units
-- **150+ ML models** deployed to production
-- **40% improvement** in AI time-to-market
-- **500+ employees** trained on AI/ML
+The landing page (`app.py`) lets you pick one of two editions.
 
-## ✨ Features
+**Enterprise Edition**
 
-### 📊 Change Readiness Dashboard
-- Regional readiness heatmaps
-- Maturity score distributions
-- Cloud provider analytics
-- Time-to-market insights
+- **Change readiness:** a readiness heatmap by region, maturity-score distributions and key insights across business units
+- **Blueprint generator:** reference architectures by industry and cloud (Azure, AWS or GCP), with MLOps pipeline templates and cost estimates
+- **ROI estimator:** ROI by region and industry, plus a custom ROI calculator with 3-year projections
+- **MLOps toolkit:** a starter project structure, best-practice guides and implementation checklists
 
-### 🏗️ Blueprint Generator
-- Industry-specific architectures
-- Multi-cloud support (Azure, AWS, GCP)
-- MLOps pipeline templates
-- Cost estimation
+**GenAI Edition**
 
-### 💰 ROI Estimator
-- Regional and industry ROI analysis
-- Custom ROI calculator
-- 3-year benefit projections
-- Executive summaries
+- **AI playground:** try prompts with different models, temperature and token settings. Responses, token counts and costs are simulated.
+- **Document Q&A:** a walkthrough of a document question-answering flow (simulated)
+- **Analytics dashboard:** usage, latency and cost views on generated data
+- **Blueprint generator and ROI calculator** extended for LLM use cases
+- **MLOps and GenAI Ops toolkit:** setup, monitoring and troubleshooting guides
 
-### 📚 MLOps Starter Kit
-- Project structure templates
-- Best practices guides
-- Downloadable resources
-- Implementation checklists
+## Run it locally
 
-## 🚀 Quick Start
+Tested with Python 3.12.
 
-### Local Development
+```bash
+git clone https://github.com/sumankrsh/ai-accelerator-toolkit.git
+cd ai-accelerator-toolkit
+pip install -r requirements.txt
+streamlit run app.py
+```
 
-1. **Clone the repository**
-   ```bash
-   git clone <your-repo-url>
-   cd ai-accelerator-toolkit
-   ```
+Then open http://localhost:8501.
 
-2. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
+The sample data file is already in the repo. Run `python generate_dummy_data.py` if you want a fresh synthetic set.
 
-3. **Generate dummy data** (if not already present)
-   ```bash
-   python generate_dummy_data.py
-   ```
+To open one edition directly:
 
-4. **Run the application**
-   ```bash
-   streamlit run app.py
-   ```
-   
-   Or run specific editions directly:
-   ```bash
-   streamlit run pages/1_Enterprise_Edition.py  # For Enterprise Edition
-   streamlit run pages/2_GenAI_Edition.py       # For GenAI Edition
-   ```
+```bash
+streamlit run pages/1_Enterprise_Edition.py
+streamlit run pages/2_GenAI_Edition.py
+```
 
-5. **Access the app**
-   Open browser to http://localhost:8501
+To host it for free, connect a fork to [Streamlit Community Cloud](https://share.streamlit.io) and set the main file to `app.py`.
 
-### 🌐 Deploy to Streamlit Cloud (Free Hosting)
-
-1. **Push to GitHub**
-   ```bash
-   git add .
-   git commit -m "Initial commit"
-   git push origin main
-   ```
-
-2. **Deploy on Streamlit Cloud**
-   - Go to [share.streamlit.io](https://share.streamlit.io)
-   - Sign in with GitHub
-   - Click "New app"
-   - Select your repository
-   - Set main file path: `app.py`
-   - Click "Deploy"
-
-3. **Access your deployed app**
-   - URL format: `https://[your-app-name].streamlit.app`
-   - Share with stakeholders!
-
-## 📁 Project Structure
+## Project structure
 
 ```
 ai-accelerator-toolkit/
-├── app.py                     # Main app selector
+├── app.py                        # Landing page: pick an edition
 ├── pages/
-│   ├── 1_Enterprise_Edition.py # Enterprise Edition
-│   └── 2_GenAI_Edition.py      # GenAI Edition
-├── main.py                    # Original enterprise app
-├── main_genai.py              # New GenAI features
-├── generate_dummy_data.py     # Data generation script
-├── leadership_case_study.py   # Leadership impact content
-├── dummy_enterprise_data.csv  # Generated enterprise data
-├── requirements.txt           # Python dependencies
-├── .streamlit/
-│   └── config.toml           # Streamlit configuration
-├── .gitignore                # Git ignore file
-└── README.md                 # This file
+│   ├── 1_Enterprise_Edition.py   # Readiness, blueprints, ROI, MLOps
+│   └── 2_GenAI_Edition.py        # Playground, document Q&A, analytics, GenAI Ops
+├── main.py                       # Standalone copy of the Enterprise Edition
+├── main_genai.py                 # Standalone copy of the GenAI Edition
+├── generate_dummy_data.py        # Builds the synthetic dataset
+├── dummy_enterprise_data.csv     # 350 synthetic business units
+├── requirements.txt
+└── .streamlit/config.toml        # Theme and server settings
 ```
 
-## 🛠️ Technical Stack
+## Sample data
 
-- **Frontend:** Streamlit
-- **Data Processing:** Pandas, NumPy
-- **Visualization:** Plotly, Matplotlib
-- **Deployment:** Streamlit Cloud (free)
-- **Data Generation:** Faker
+Each synthetic business unit has a region, industry and cloud provider, maturity scores (data, MLOps, governance), budget and estimated ROI, models in production, time to market and an implementation date. Change `generate_dummy_data.py` to add your own use cases or fields.
 
-## 📈 Leadership Impact
+## Built with
 
-This toolkit showcases enterprise AI transformation leadership:
+Streamlit, pandas, Plotly and Faker.
 
-### Key Achievements
-- Led AI transformation across 350+ business units
-- Achieved $45M+ in realized ROI (Year 1)
-- Deployed 150+ ML models to production
-- Reduced time-to-market by 40%
+## Contact
 
-### Technical Innovation
-- Designed multi-cloud AI platform
-- Implemented enterprise MLOps framework
-- Built real-time ML serving (10M+ predictions/day)
-- Created reusable AI accelerators
+Built by Suman Mukherjee. Questions or ideas: [contactme@mukherjeesuman.com](mailto:contactme@mukherjeesuman.com) · [mukherjeesuman.com](https://www.mukherjeesuman.com)
 
-### Business Transformation
-- **Customer Intelligence:** $12M retained revenue
-- **Risk & Compliance:** $8M fraud prevented
-- **Operations:** 30% inventory cost reduction
+## License
 
-## 🔧 Configuration
-
-### Environment Variables (Optional)
-Create a `.streamlit/secrets.toml` file for any API keys:
-```toml
-[api_keys]
-azure_key = "your-azure-key"
-aws_key = "your-aws-key"
-```
-
-### Customization
-- Update company branding in `main.py`
-- Modify color scheme in `.streamlit/config.toml`
-- Add custom use cases in data generator
-- Extend architecture templates
-
-## 📊 Data Schema
-
-The toolkit uses enterprise data with the following schema:
-- Business unit information
-- Regional distribution
-- Industry classification
-- Cloud readiness metrics
-- Maturity scores (Data, MLOps, Governance)
-- Financial metrics (Budget, ROI)
-- Implementation timelines
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
-
-## 📝 License
-
-This project is licensed under the MIT License.
-
-## 🙏 Acknowledgments
-
-- Built with Streamlit
-- Powered by enterprise AI transformation experience
-- Demonstrates real-world impact and leadership
-
-## 📞 Contact
-
-For questions about this toolkit or enterprise AI transformation:
-- **Architect:** Suman Mukherjee
-- **Email:** smn.mukherjee@gmail.com
-- **GitHub:** https://github.com/[your-username]
-
----
-
-**Built with ❤️ for accelerating enterprise AI transformation**
+MIT
